@@ -64,7 +64,7 @@ screen wardrobe_hair:
     
     
 label change_hair_new:
-    #call her_main("Sure, let me just go change it.","body_01")
+    #call her_main("Sure, let me just ogooo change it.","body_01")
     $ hermione_SC.setHair(wardrobe_hair_style,wardrobe_hair_color)
     hide screen wardrobe_hair
     call screen wardrobe_hair
@@ -73,7 +73,7 @@ label change_hair_new:
     
     
 label change_hair():
-    call her_main("Sure, let me just go change it.","body_01")
+    call her_main("Sure, let me just gooo change it.","body_01")
     call set_h_hair(wardrobe_hair_style,wardrobe_hair_color)
     hide screen wardrobe_hair
     call screen wardrobe_hair
@@ -324,12 +324,19 @@ screen wardrobe_underwear:
     zorder hermione_main_zorder-1
     
     $ wardrobe_underwear_selection = []
+    $ wardrobe_underwear_selection.append("lace")
+    $ wardrobe_underwear_selection.append("latex")
+    $ wardrobe_underwear_selection.append("silk")
+    $ wardrobe_underwear_selection.append("base")
     if "gryffindor_stockings" in cs_existing_stock:
         $ wardrobe_underwear_selection.append("gryffindor_stockings")
     if "fishnet_stockings" in cs_existing_stock:
         $ wardrobe_underwear_selection.append("fishnet_stockings")
     if "lace_stockings" in cs_existing_stock:
         $ wardrobe_underwear_selection.append("lace_stockings")
+        
+    
+    
     
     
     imagemap:
@@ -344,14 +351,17 @@ screen wardrobe_underwear:
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,len(wardrobe_underwear_selection)):
             hotspot ((21+(90*i)), 140, 83, 85):
+                #if wardrobe_underwear_selection != "lace_bra":
                 clicked [SetVariable("wardrobe_underwear_selection",wardrobe_underwear_selection[i]),Jump("wardrobe_wear_underwear")]
+                #else:
+                #    clicked [SetVariable("wardrobe_underwear_selection",wardrobe_underwear_selection[i]),Jump("wardrobe_wear_underwear2")]
         
         for i in range(0,len(wardrobe_underwear_selection)):
-            add "01_hp/13_characters/hermione/clothes/stockings/"+str(wardrobe_underwear_selection[i])+".png" xpos -105+(90*i) ypos -135 zoom 0.6
+            add "01_hp/13_characters/hermione/clothes/stockings/"+str(wardrobe_underwear_selection[i])+"troll.png" xpos -105+(90*i) ypos -135 zoom 0.6
         
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15
@@ -362,8 +372,21 @@ screen wardrobe_underwear:
     
     
 label wardrobe_wear_underwear:
-    call set_h_stockings(wardrobe_underwear_selection)
+    if wardrobe_underwear_selection != "lace" and wardrobe_underwear_selection != "latex" and wardrobe_underwear_selection != "silk" and wardrobe_underwear_selection != "base":
+        "teste"
+        #call set_h_stockings(wardrobe_underwear_selection)
+        call equip_gryyf_stockings
+        "teste3"
+    else:
+        call set_h_underwear(wardrobe_underwear_selection + "_bra",wardrobe_underwear_selection + "_panties")
     
+    hide screen wardrobe_underwear
+    call screen wardrobe_underwear
+    
+label wardrobe_wear_underwear2:
+    #call h_panties_off
+    #call h_bra_off
+    call set_h_underwear("lace_bra","lace_panties")
     hide screen wardrobe_underwear
     call screen wardrobe_underwear
     
@@ -392,7 +415,7 @@ screen wardrobe_potions: #(Removed)
         for i in range(0,6):
             hotspot ((21+(90*i)), 140, 83, 85):
                 hovered [SetVariable("potion_name",p_potion_names[i])]
-                clicked [SetVariable("wardrobe_potion",i+1),Jump("wardrobe_give_potion")]
+                clicked [SetVariable("wardrobe_potion",i+1),Jump("day_request_wardrobe")]
         
         for i in range(1,7):
             add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*i) ypos 135 zoom 0.8
@@ -409,9 +432,10 @@ screen wardrobe_potions: #(Removed)
     
 label wardrobe_give_potion:
     hide screen wardrobe_gifts
-    $ renpy.jump("potion_scene_"+str(wardrobe_potion))
+    #$ renpy.jump("potion_scene_"+str(wardrobe_potion))
     
 label day_request_wardrobe:
+    hide screen wardrobe_gifts
     menu:
         "-Hair-":
             label day_request_hair:
@@ -531,35 +555,35 @@ label day_request_wardrobe:
                 "-Underwear-":
                     label day_request_clothing_underwear:
                     menu:
-                        "-Put the Lace Bra and Panties on-" if "lace_set" in cs_existing_stock and h_bra != "lace_bra":
+                        "-Put the Lace Bra and Panties on-" if h_bra != "lace_bra":
                             call set_h_underwear("lace_bra","lace_panties")
                             jump day_request_clothing_underwear
                             
-                        "-Take the Lace Bra and Panties off-" if "lace_set" in cs_existing_stock and h_bra == "lace_bra":
+                        "-Take the Lace Bra and Panties off-" if h_bra == "lace_bra":
                             call set_h_underwear
                             jump day_request_clothing_underwear
                             
-                        "-Put the Cup-less Lace Bra on-" if "cup_set" in cs_existing_stock and h_bra != "cup_bra":
+                        "-Put the Cup-less Lace Bra on-" if h_bra != "cup_bra":
                             call set_h_underwear("cup_bra","cup_panties")
                             jump day_request_clothing_underwear
                             
-                        "-Take the Cup-less Lace Bra off-" if "cup_set" in cs_existing_stock and h_bra == "cup_bra":
+                        "-Take the Cup-less Lace Bra off-" if h_bra == "cup_bra":
                             call set_h_underwear
                             jump day_request_clothing_underwear
                             
-                        "-Put the Silk Bra and Panties on-" if "silk_set" in cs_existing_stock and h_bra != "silk_bra":
+                        "-Put the Silk Bra and Panties on-" if h_bra != "silk_bra":
                             call set_h_underwear("silk_bra","silk_panties")
                             jump day_request_clothing_underwear
                             
-                        "-Take the Silk Bra and Panties off-" if "silk_set" in cs_existing_stock and h_bra == "silk_bra":
+                        "-Take the Silk Bra and Panties off-" if h_bra == "silk_bra":
                             call set_h_underwear
                             jump day_request_clothing_underwear
                             
-                        "-Put the Latex and Panties on-" if "latex_set" in cs_existing_stock and h_bra != "latex_bra":
+                        "-Put the Latex and Panties on-" if h_bra != "latex_bra":
                             call set_h_underwear("latex_bra","latex_panties")
                             jump day_request_clothing_underwear
                             
-                        "-Take the Latex and Panties off-" if "latex_set" in cs_existing_stock and h_bra == "latex_bra":
+                        "-Take the Latex and Panties off-" if h_bra == "latex_bra":
                             call set_h_underwear
                             jump day_request_clothing_underwear
                         

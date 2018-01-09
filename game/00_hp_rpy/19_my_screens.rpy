@@ -2047,8 +2047,8 @@ screen custom_character_2: #Screen that shows a full sprite of Cho
         add "01_hp/24_custom_characters/custom_character_2/legs/legs_03.png" xpos h_xpos+140 ypos h_ypos #Add the legs.
     add "01_hp/24_custom_characters/custom_character_2/shirts/shirt_00.png" xpos h_xpos+140 ypos h_ypos #Add the shirt.
     zorder 5 #(5) Otherwise candle light is shown on top.
-    
-    
+
+   
 screen custom_character_3: #Screen that shows a full sprite of Astoria
     #tag astoria_main
     add "01_hp/24_custom_characters/custom_character_3/hair/hair_00.png" xpos h_xpos+140 ypos h_ypos #Add the hair.

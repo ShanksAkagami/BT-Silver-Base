@@ -7,6 +7,7 @@ label start_ht:
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
     
     
+    
     ### HERMIONE_MAIN SCREN FLAGS ###
     $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
     $ autograph = False #Displays professor Lockhart's autograph on Hermione's leg.

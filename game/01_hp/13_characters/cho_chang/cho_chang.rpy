@@ -25,6 +25,9 @@ label cho_menu:
 label cho_end_event:
     hide screen cho_chang
     jump day_main_menu
+    
+
+    
 
 
 

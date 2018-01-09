@@ -1,6 +1,28 @@
 ### THIS IS WHERE WE DECLARE VARIABLES AND STUFF FOR 4 HOUSES
 
 label FH_init:
+
+###DECLARE GINNY WEASLEY STUFF
+    
+    $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00.png" 
+    $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/uniform/top_1.png"
+    $ gw_skirt = "01_hp/13_characters/ginny_weasley/clothes/uniform/skirt_2.png"
+    $ gw_bra = "01_hp/13_characters/ginny_weasley/clothes/underwear/silk_bra.png"
+    $ gw_panties = "01_hp/13_characters/ginny_weasley/clothes/underwear/silk_panties.png"
+    $ gw_zorder = 5
+    
+    ###Clothing flags
+
+    $ gw_wear_top = True
+    $ gw_wear_bra = True
+    #$ gw_wear_vest = True
+    #$ gw_wear_stockings = True 
+    $ gw_wear_skirt = True
+    $ gw_wear_panties = True
+    #$ gw_wear_acc = True
+
+    
+
 ###DECLARE CHO CHANG STUFF
     $ cc_base = "01_hp/13_characters/cho_chang/base/base_01.png" 
     $ cc_arms = "01_hp/13_characters/cho_chang/base/side_arms.png" 

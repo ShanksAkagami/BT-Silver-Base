@@ -255,6 +255,7 @@ label __init_variables:
     ##Shaming favour
     if not hasattr(renpy.store,'buttplug_2_worn'): #important!
         $ buttplug_2_worn = False
+        $ buttplug_3_worn = False
     if not hasattr(renpy.store,'hermione_buttplugs'): #important!
         $ hermione_buttplugs = False
     if not hasattr(renpy.store,'hermione_buttplug'): #important!
@@ -298,6 +299,9 @@ label __init_variables:
 
     #4 Houses Stuff
     if not hasattr(renpy.store,'cc_base'): #important!
+        call FH_init
+    
+    if not hasattr(renpy.store,'gw_base'): #important!
         call FH_init
     
     

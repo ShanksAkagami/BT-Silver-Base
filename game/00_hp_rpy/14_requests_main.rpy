@@ -393,6 +393,14 @@ label silver_requests:
                     "-Nevermind -":
                         jump silver_requests
                         
+            "-Stop wearing panties-" if h_request_wear_panties and whoring >= 6:
+                call h_panties_off
+                jump day_time_requests
+                    
+            "-Wear panties-" if not h_request_wear_panties and whoring >= 6:
+                call h_panties_on
+                jump day_time_requests
+                        
             "-Never mind-":
                 jump day_time_requests
             

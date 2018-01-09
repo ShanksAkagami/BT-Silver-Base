@@ -1,3 +1,46 @@
+screen ginny_weasley:
+    ### BASE IMAGE
+    #add cc_arms xpos cc_xpos ypos cc_ypos #Add the arms
+    if not gw_wear_top and not gw_wear_bra:
+        $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00_nip.png"
+        add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+    else:
+        $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00.png"
+        add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+   
+    
+    #add cc_hair_shadow xpos cc_xpos ypos cc_ypos #Add the hair shadow
+    ### EMOTIONS
+    #add cc_eye xpos cc_xpos ypos cc_ypos #Add the eye outline
+    #add cc_pupil xpos cc_xpos ypos cc_ypos #Add the pupil
+    #add cc_eyebrow xpos cc_xpos ypos cc_ypos #Add the eyebrow
+    #add cc_hair xpos cc_xpos ypos cc_ypos #Add the hair shadow
+    ###MOUTH
+    #add cc_mouth xpos cc_xpos ypos cc_ypos #Add the mouth
+    ###TEARS for fears
+    #add cc_tears xpos cc_xpos ypos cc_ypos #Add the tears
+    ### CLOTHES 
+    if gw_wear_bra and not gw_wear_top:
+        add gw_bra xpos gw_xpos ypos gw_ypos # Add the bra
+    if gw_wear_panties and not gw_wear_skirt:
+        add gw_panties xpos gw_xpos ypos gw_ypos # Add the panties
+    if gw_wear_skirt:
+        add gw_skirt xpos gw_xpos ypos gw_ypos # Add the skirt
+    if gw_wear_top:
+        add gw_top xpos gw_xpos ypos gw_ypos # Add the top
+    
+    #if cc_wear_acc:
+    #    add cc_acc xpos cc_xpos ypos cc_ypos # Add the accessory
+    #if cc_wear_vest:
+    #    add cc_vest xpos cc_xpos ypos cc_ypos # Add the vest
+    #if cc_wear_stockings:
+    #    add cc_stock xpos cc_xpos ypos cc_ypos # Add the stockings
+    ### OTHER
+    #add cc_l_hand xpos cc_xpos ypos cc_ypos # Add the left hand
+    ### ZORDER
+    #zorder gw_zorder
+    zorder gw_zorder
+    
 screen cho_chang:
     ### BASE IMAGE
     add cc_arms xpos cc_xpos ypos cc_ypos #Add the arms
@@ -31,6 +74,7 @@ screen cho_chang:
     add cc_l_hand xpos cc_xpos ypos cc_ypos # Add the left hand
     ### ZORDER
     zorder cc_zorder
+    #zorder gw_zorder
 
 screen susan_bones:
     ### BASE IMAGE
@@ -66,9 +110,92 @@ label cho_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None):
     if text != "":
         $ renpy.say(cho, text)
     return
+    
+label ginny_main(text="", body=None):
+    if body!=None:
+        $ changeGinny(body)
+    if text != "":
+        $ renpy.say(ginny, text)
+    return
 
 
 init python: ###Method Definition for new characters
+    #def changeGinny(  ginny_eye=None,
+    #                  ginny_eyebrow=None, 
+    #                ginny_pupil=None, 
+    #                ginny_mouth=None, 
+    #                x_pos=None, 
+    #                y_pos=None): # ginny
+    def changeGinny(  ginny_body=None,
+                      x_pos=None, 
+                      y_pos=None): # ginny
+        ###DEFINE GLOBAL VARIABLES
+        global gw_xpos
+        global gw_ypos
+        global gw_base
+        global gw_cheeks
+        global gw_eye
+        global gw_pupil
+        #global gw_eyebrow
+        global gw_mouth
+        global gw_eyebrow
+        ###CHANGE INTS TO STRING
+        #ginny_eye = str(ginny_eye)
+        #ginny_eyebrow = str(ginny_eyebrow)
+        #ginny_pupil = str(ginny_pupil)
+        #ginny_mouth = str(ginny_mouth)
+    
+        ginny_body = str(ginny_body)
+    
+        ###HIDE OLD SCREEN
+        #renpy.hide_screen("ginny_weasley")
+        ###MANUAL POSITION CONTROL
+        if x_pos is not None:
+            gw_xpos = x_pos
+        else:
+            gw_xpos = gw_xpos
+        if y_pos is not None:
+            gw_ypos = y_pos
+        else:
+            gw_ypos = gw_ypos
+
+        ###EMOTION CONTROLish
+        
+        if ginny_body is not None:
+            if ginny_body == "0":
+                gw_body = "01_hp/13_characters/ginny_weasley/base/base_00.png"
+            else:
+                gw_body = "01_hp/13_characters/ginny_weasley/base/base_00.png"
+    
+        #if ginny_eye is not None:
+            #if ginny_eye == "0":
+        #        gw_eye = "01_hp/13_characters/blank.png"
+            #else:
+        #    #    gw_eye = "01_hp/13_characters/ginny_weasley/eye/eye_0"+ginny_eye+".png" #nao tem 
+
+        #if ginny_eyebrow is not None:
+        #    if ginny_eyebrow == "0":
+        #        cc_eyebrow = "01_hp/13_characters/blank.png"
+        #    else:
+        #        cc_eyebrow = "01_hp/13_characters/ginny_chang/eye/eyebrow_0"+ginny_eyebrow+".png" 
+
+        #if ginny_pupil is not None:
+        #    if ginny_pupil == "0":
+        #        cc_pupil = "01_hp/13_characters/blank.png"
+        #    else:
+        #        cc_pupil = "01_hp/13_characters/ginny_chang/eye/pupil_0"+ginny_pupil+".png" 
+
+        #if ginny_mouth is not None:
+        #    if ginny_mouth == "0":
+        #        cc_mouth = "01_hp/13_characters/blank.png"
+        #    else:
+        #        cc_mouth = "01_hp/13_characters/ginny_chang/mouth/mouth_0"+ginny_mouth+".png" 
+            
+        ###DISPLAY THE UPDATED SCREEEN
+        renpy.show_screen("ginny_weasley")
+        renpy.with_statement(Dissolve(0.3))
+
+
     def changeCho(  cho_eye=None,
                     cho_eyebrow=None, 
                     cho_pupil=None, 

@@ -429,7 +429,11 @@ label door:
         "-Summon Cho-" if cho_met and not cho_busy:
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # CHO'S THEME (placeholder probably)
             jump cho_menu
-                            
+        
+        "-Summon Ginny-":
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # GINNY'S THEME (placeholder probably)
+            jump ginny_menu
+        
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:
             ">Professor Snape is unavailable."
             if daytime:

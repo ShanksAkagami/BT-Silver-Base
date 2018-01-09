@@ -53,6 +53,7 @@ init python:
     cho = Character('Cho', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     sus = Character('Susan', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     ast = Character('Astoria', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    ginny = Character('Ginny', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     
     
 define dum = Character(None, window_left_padding=240, image="dum1", color="#402313", ctc="ctc3", ctc_position="fixed")

@@ -450,6 +450,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                         call her_main("Thank you, [genie_name]!","body_60")
                     "\"Absolutely not!\"":
                         $ mad +=5
+                        $ panties = temp_panties
                         call her_main("Why not!?","body_62")
                         m "Sluts aren't paid"
                         m "That's what makes them sluts"
