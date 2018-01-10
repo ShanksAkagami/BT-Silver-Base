@@ -1713,7 +1713,6 @@ label set_h_stockings(stocking = "00_blank"):
     call update_her_uniform
     show screen hermione_main
     with d5
-    #call equip_gryyf_stockings
     return
     
 label set_h_costume(costume_id = 0):

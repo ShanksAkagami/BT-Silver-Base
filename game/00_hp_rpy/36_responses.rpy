@@ -94,18 +94,21 @@ label map_lake: #Label controlling what happens when you go to the lake
 label map_dorms: #Label controlling what happens when you go to the dorms
     menu:
         "-Search the area-":#Luna's Hair
-            #if whoring >=10 :
-            ">You found something."
-            $ the_gift = "01_hp/13_characters/ginny_weasley/extra/diary.png" # Ginny's diary.
-            show screen gift
-            with d3
-            $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
-            ">You found Ginevra Weasley's diary."
-            hide screen gift
-            with d3
-            m "Ginevra Weasley??"
-            m "What the fuck kind of name is Ginevra?"
-            m "Anyway, this might be useful, better take this back with me to my office"
+            if not diary_found:
+                ">You found something."
+                $ the_gift = "01_hp/13_characters/ginny_weasley/extra/diary.png" # Ginny's diary.
+                show screen gift
+                with d3
+                $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
+                ">You found Ginevra Weasley's diary."
+                hide screen gift
+                with d3
+                m "Ginevra Weasley??"
+                m "What the fuck kind of name is Ginevra?"
+                m "Anyway, this might be useful, better take this back with me to my office"
+                $ diary_found = True
+                $ diary_read = False
+                jump return_office
             if day_random >= 7:
                 ">You search around the dorms and manage to find a clump for bright orange fur."
                 m "This must belong to some sort of animal."

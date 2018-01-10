@@ -363,6 +363,30 @@ label door:
                         else:
                             jump silver_requests
                     
+                    "-Ask about Ginevra-" if daytime and diary_read and not ginny_summon:
+                        m "[hermione_name], do you know a girl named Ginevra?"
+                        her "Yes, Ginny, she's a friend, she's also from Gryffindor"
+                        m "That was all, you can go now."
+                        call her_main("Em... Okay...","body_11")
+                        $ ginny_summon = True
+                        $ menu_x = 0.5 #Menu position is back to default. (Center).
+                        if daytime:
+                            $ hermione_takes_classes = True
+                            if mad >=3 and mad < 7:
+                                her "..............................."
+                            elif mad >=7:
+                                her "*Humph!*..."
+                            else:
+                                her "Oh, alright. I will go to classes then."
+                            hide screen bld1
+                            hide screen hermione_main
+                            hide screen blktone 
+                            hide screen hermione_blink
+                            hide screen ctc
+                            with d3
+                            jump day_main_menu
+                            
+
                     "-Inventory-":
                         call her_main("",xpos=410)
                         call screen wardrobe
@@ -430,7 +454,7 @@ label door:
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # CHO'S THEME (placeholder probably)
             jump cho_menu
         
-        "-Summon Ginny-":
+        "-Summon Ginny-" if ginny_summon:
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # GINNY'S THEME (placeholder probably)
             jump ginny_menu
         
@@ -444,6 +468,10 @@ label door:
         "-Summon Snape-" if hanging_with_snape and not snape_busy:
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
             jump summon_snape
+
+        #"-FH_init-":
+        #    call FH_init
+        #    jump day_main_menu
         "-Never mind-":
             jump day_main_menu
     

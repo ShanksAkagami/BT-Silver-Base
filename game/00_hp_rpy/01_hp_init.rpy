@@ -53,6 +53,8 @@ label hp:
 ###THE GAME STARTS###
 $ day = 0
 
+
+
 ### PAPERWORK (MONEY-MAKING) RELATED FLAGS ###
 $ day_of_week = 0 #Counts days of the week. Everyday +1. When day_of_week = 7 resets to zero.
 $ report_chapters = 0 #Shows how many chapters of a current report has been completed so far. Resets to zero when report is finished.

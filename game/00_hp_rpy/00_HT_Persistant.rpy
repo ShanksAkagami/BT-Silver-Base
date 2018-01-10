@@ -303,6 +303,12 @@ label __init_variables:
     
     if not hasattr(renpy.store,'gw_base'): #important!
         call FH_init
+
+    if not hasattr(renpy.store, 'diary_read'):
+        call FH_init
+
+    if not hasattr(renpy.store,'ginny_summon'): #important!
+        $ ginny_summon = False
     
     
     

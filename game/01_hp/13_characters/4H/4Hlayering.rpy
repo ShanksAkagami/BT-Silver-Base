@@ -1,4 +1,4 @@
-screen ginny_weasley:
+screen ginny_weasleyold:
     ### BASE IMAGE
     #add cc_arms xpos cc_xpos ypos cc_ypos #Add the arms
     if not gw_wear_top and not gw_wear_bra:
@@ -24,11 +24,96 @@ screen ginny_weasley:
         add gw_bra xpos gw_xpos ypos gw_ypos # Add the bra
     if gw_wear_panties and not gw_wear_skirt:
         add gw_panties xpos gw_xpos ypos gw_ypos # Add the panties
-    if gw_wear_skirt:
+    elif gw_wear_panties and gw_wear_skirt:
+        add gw_panties xpos gw_xpos ypos gw_ypos # Add the panties
         add gw_skirt xpos gw_xpos ypos gw_ypos # Add the skirt
     if gw_wear_top:
         add gw_top xpos gw_xpos ypos gw_ypos # Add the top
     
+    #if cc_wear_acc:
+    #    add cc_acc xpos cc_xpos ypos cc_ypos # Add the accessory
+    #if cc_wear_vest:
+    #    add cc_vest xpos cc_xpos ypos cc_ypos # Add the vest
+    #if cc_wear_stockings:
+    #    add cc_stock xpos cc_xpos ypos cc_ypos # Add the stockings
+    ### OTHER
+    #add cc_l_hand xpos cc_xpos ypos cc_ypos # Add the left hand
+    ### ZORDER
+    #zorder gw_zorder
+    zorder gw_zorder
+
+screen ginny_weasley:
+    ### BASE IMAGE
+    #add cc_arms xpos cc_xpos ypos cc_ypos #Add the arms
+    #if not gw_wear_top and not gw_wear_bra:
+    #    $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00_nip.png"
+    #    add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+    #else:
+    #    $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00.png"
+        #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+    add gw_hair_layer xpos gw_xpos ypos gw_ypos
+    add gw_torso xpos gw_xpos ypos gw_ypos
+    add gw_arms_left xpos gw_xpos ypos gw_ypos
+    add gw_arms_right xpos gw_xpos ypos gw_ypos
+    add gw_legs xpos gw_xpos ypos gw_ypos
+    if not gw_wear_top and not gw_wear_bra:
+        $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
+        #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+    else:
+        $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/pressed.png"
+        #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+    
+    add gw_tits xpos gw_xpos ypos gw_ypos
+    add gw_head xpos gw_xpos ypos gw_ypos
+
+    #add gw_nose xpos gw_xpos ypos gw_ypos
+    #add gw_cheeks xpos gw_xpos ypos gw_ypos
+    add gw_eyes xpos gw_xpos ypos gw_ypos
+    add gw_mouth xpos gw_xpos ypos gw_ypos
+
+    ###BLUSHED
+    if gw_blushed:
+        add gw_cheeks xpos gw_xpos ypos gw_ypos #Add blush
+    
+    ###PUSSY
+    add gw_pussy xpos gw_xpos ypos gw_ypos #add pussy
+    if not gw_shaved:
+        add gw_pubic xpos gw_xpos ypos gw_ypos
+
+
+
+
+    
+    
+    #add cc_hair_shadow xpos cc_xpos ypos cc_ypos #Add the hair shadow
+    ### EMOTIONS
+    #add cc_eye xpos cc_xpos ypos cc_ypos #Add the eye outline
+    #add cc_pupil xpos cc_xpos ypos cc_ypos #Add the pupil
+    #add cc_eyebrow xpos cc_xpos ypos cc_ypos #Add the eyebrow
+    #add cc_hair xpos cc_xpos ypos cc_ypos #Add the hair shadow
+    ###MOUTH
+    #add cc_mouth xpos cc_xpos ypos cc_ypos #Add the mouth
+    ###TEARS for fears
+    #add cc_tears xpos cc_xpos ypos cc_ypos #Add the tears
+    ### CLOTHES 
+    
+
+    if gw_wear_bra and not gw_wear_top:
+        add gw_bra xpos gw_xpos ypos gw_ypos # Add the bra
+    if gw_wear_panties and not gw_wear_skirt:
+        add gw_panties xpos gw_xpos ypos gw_ypos # Add the panties
+    elif gw_wear_panties and gw_wear_skirt:
+        add gw_panties xpos gw_xpos ypos gw_ypos # Add the panties
+        add gw_skirt xpos gw_xpos ypos gw_ypos # Add the skirt
+    elif not gw_wear_panties and gw_wear_skirt:
+        add gw_skirt xpos gw_xpos ypos gw_ypos # Add the skirt
+    if gw_wear_top:
+        add gw_top xpos gw_xpos ypos gw_ypos # Add the top
+    
+    if gw_wear_robes:
+        add gw_robes xpos gw_xpos ypos gw_ypos
+
+    add gw_hair xpos gw_xpos ypos gw_ypos
     #if cc_wear_acc:
     #    add cc_acc xpos cc_xpos ypos cc_ypos # Add the accessory
     #if cc_wear_vest:
@@ -53,6 +138,7 @@ screen cho_chang:
     add cc_hair xpos cc_xpos ypos cc_ypos #Add the hair shadow
     ###MOUTH
     add cc_mouth xpos cc_xpos ypos cc_ypos #Add the mouth
+
     ###TEARS for fears
     add cc_tears xpos cc_xpos ypos cc_ypos #Add the tears
     ### CLOTHES 
@@ -111,12 +197,24 @@ label cho_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None):
         $ renpy.say(cho, text)
     return
     
-label ginny_main(text="", body=None):
+label ginny_main(text="", body=None, mouth=None, eyes=None):
     if body!=None:
-        $ changeGinny(body)
+        $ changeGinny(body,mouth, eyes)
     if text != "":
         $ renpy.say(ginny, text)
     return
+
+label ginny_change(type="", name=""):
+    if type == "top":
+        $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/top/"+name+".png"
+    elif type == "skirt":
+        $ gw_skirt = "01_hp/13_characters/ginny_weasley/clothes/bottom/"+name+".png"
+    elif type == "panty":
+        $ gw_panties = "01_hp/13_characters/ginny_weasley/clothes/underwear/"+name+".png"
+    elif type == "bra":
+        $ gw_bra = "01_hp/13_characters/ginny_weasley/clothes/underwear/"+name+".png"
+    return
+    
 
 
 init python: ###Method Definition for new characters
@@ -127,18 +225,39 @@ init python: ###Method Definition for new characters
     #                x_pos=None, 
     #                y_pos=None): # ginny
     def changeGinny(  ginny_body=None,
+                      ginny_mouth=None,
+                      ginny_eyes=None,
                       x_pos=None, 
                       y_pos=None): # ginny
         ###DEFINE GLOBAL VARIABLES
         global gw_xpos
         global gw_ypos
         global gw_base
+
+        global gw_torso
+        global gw_arms_left
+        global gw_arms_right
+        global gw_legs
+        global gw_tits
+        global gw_head
+        global gw_nose
+
+
         global gw_cheeks
-        global gw_eye
-        global gw_pupil
-        #global gw_eyebrow
+
+
+
+
+        global gw_eyes
+        #global gw_pupil
+
         global gw_mouth
-        global gw_eyebrow
+        #global gw_eyebrow
+        global gw_pubic
+        global gw_pussy
+        global gw_hair
+        global gw_hair_layer
+        global gw_top
         ###CHANGE INTS TO STRING
         #ginny_eye = str(ginny_eye)
         #ginny_eyebrow = str(ginny_eyebrow)
@@ -161,11 +280,47 @@ init python: ###Method Definition for new characters
 
         ###EMOTION CONTROLish
         
-        if ginny_body is not None:
-            if ginny_body == "0":
-                gw_body = "01_hp/13_characters/ginny_weasley/base/base_00.png"
+        
+
+
+        gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/default.png"
+        gw_arms_left = "01_hp/13_characters/ginny_weasley/body/arms_left/default.png"
+        gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
+        gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
+        gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
+        gw_head = "01_hp/13_characters/ginny_weasley/body/head/default.png"
+        
+        gw_nose = "01_hp/13_characters/ginny_weasley/body/nose/default.png"
+        gw_cheeks = "01_hp/13_characters/ginny_weasley/body/cheeks/blush.png"
+        #gw_eyes = "01_hp/13_characters/ginny_weasley/body/eyes/default.png"
+
+        if ginny_eyes is not None:
+            ginny_eyes = str(ginny_eyes)
+            if ginny_eyes == "0":
+                gw_eyes = "01_hp/13_characters/blank.png"
             else:
-                gw_body = "01_hp/13_characters/ginny_weasley/base/base_00.png"
+                gw_eyes = "01_hp/13_characters/ginny_weasley/body/eyes/"+ginny_eyes+".png"
+                #gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/2.png"
+
+
+        #gw_pupil = "01_hp/13_characters/ginny_weasley/body/pupil/default.png"
+        
+        if ginny_mouth is not None:
+            ginny_mouth = str(ginny_mouth)
+            if ginny_mouth == "0":
+                gw_mouth = "01_hp/13_characters/blank.png"
+            else:
+                gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/"+ginny_mouth+".png"
+                #gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/2.png"
+
+
+        #gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/"+ginny_mouth+".png"
+        gw_pubic = "01_hp/13_characters/ginny_weasley/body/pubic/au_naturel.png"
+        gw_pussy = "01_hp/13_characters/ginny_weasley/body/genitalia/default.png"
+        
+        gw_hair =  "01_hp/13_characters/ginny_weasley/body/hair/default.png"
+        gw_hair_layer = "01_hp/13_characters/ginny_weasley/body/layerhair/default.png"
+        #gw_face = "01_hp/13_characters/ginny_weasley/face/default.png"
     
         #if ginny_eye is not None:
             #if ginny_eye == "0":
@@ -194,7 +349,6 @@ init python: ###Method Definition for new characters
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("ginny_weasley")
         renpy.with_statement(Dissolve(0.3))
-
 
     def changeCho(  cho_eye=None,
                     cho_eyebrow=None, 
@@ -257,6 +411,7 @@ init python: ###Method Definition for new characters
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("cho_chang")
         renpy.with_statement(Dissolve(0.3))
+
         
     def changeSusan(    susan_eye=None, 
                         susan_eyebrow=None, 

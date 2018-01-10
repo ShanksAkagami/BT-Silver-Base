@@ -30,7 +30,34 @@ label desk:
         #   else:
         #         jump the_oddities
         
-        
+        "-Read Ginevra's Diary-" if diary_found and not diary_read:
+            g9 "Let's check this out"
+            "Dear diary, today was not a good day, I though today was gonna be the day I would muster the courage to speak with Harry, "
+            "but I chickened out again. If he would notice me things would be so much easier..."
+            g9 "A girl in love, how cute... Let's read some more"
+            "Today I saw Harry practicing quidditch, he is the best seeker around, so hot, I wish he would catch my snatch, haha"
+            m "............."
+            m "Okay.."
+            "Lately I can't stop thinking about Harry, I've been masturbating all the time thinking about him and his... wand"
+            g9 "I like this girl..."
+            "Today I hooked up with Dean while thinking of Harry, he tried to have sex with me, but I couldn't."
+            "I wanna save myself for Harry..."
+            g4 "Lucky guy, this Harry"
+            "Dean tried to convince me to do anal since I didn't wanna loose my virginity, I've been so crazy to have sex that I'm actually considering it"
+            g9 "That's my girl..."
+            "We did it, I had sex and I'm still a virgin, I feel soooo relieved, and it wasn't so bad."
+            "It was actually really good. It hurted a lot at first, but then it started to feel really good."
+            "Even the pain was good."
+            "Hope I can do this with Harry too one day..."
+            "Now I'm all wet, gonna look for Dean..."
+            "and his cock"
+            m "Now I want this girl"
+            m "I should ask Hermione about this Ginevra girl"
+            $ diary_read = True
+            $ ginny_summon = False
+            call screen main_menu_01
+
+
         "-Doze off-" if daytime and not day == 1:
             jump night_start
         "-Go to sleep-" if not daytime and not day == 1:

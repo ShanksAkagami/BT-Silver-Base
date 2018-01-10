@@ -5,21 +5,44 @@ label FH_init:
 ###DECLARE GINNY WEASLEY STUFF
     
     $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00.png" 
-    $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/uniform/top_1.png"
-    $ gw_skirt = "01_hp/13_characters/ginny_weasley/clothes/uniform/skirt_2.png"
-    $ gw_bra = "01_hp/13_characters/ginny_weasley/clothes/underwear/silk_bra.png"
-    $ gw_panties = "01_hp/13_characters/ginny_weasley/clothes/underwear/silk_panties.png"
+
+    $ gw_robes = "01_hp/13_characters/ginny_weasley/clothes/robe/gryff_quidditch.png"
+
+    $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/top/top_1.png"
+    $ gw_skirt = "01_hp/13_characters/ginny_weasley/clothes/bottom/gym.png"
+    $ gw_bra = "01_hp/13_characters/ginny_weasley/clothes/underwear/black_athlete.png"
+    $ gw_panties = "01_hp/13_characters/ginny_weasley/clothes/underwear/black_athlete_bikini.png"
+    $ gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/1.png"
+    $ gw_eyes = "01_hp/13_characters/ginny_weasley/body/eyes/1.png"
+    $ gw_cheeks = "01_hp/13_characters/ginny_weasley/body/cheeks/blush.png"
     $ gw_zorder = 5
     
     ###Clothing flags
 
-    $ gw_wear_top = True
+    $ gw_wear_top = False
     $ gw_wear_bra = True
+
+    $ gw_blushed = False
+    $ gw_shaved = False
     #$ gw_wear_vest = True
     #$ gw_wear_stockings = True 
-    $ gw_wear_skirt = True
+    $ gw_wear_skirt = False
     $ gw_wear_panties = True
+    $ gw_wear_robes = True
     #$ gw_wear_acc = True
+
+    ##Stats
+    $ ginny_whoring = 0
+    $ ginny_mad = 0
+    $ ginny_points = 0
+
+    ##Flags
+    $ diary_found = False
+    $ diary_read = False
+    $ ginny_summon = False
+    $ days_since_ginny = 0
+    $ ginny_met = False
+    $ ginny_known = False
 
     
 
