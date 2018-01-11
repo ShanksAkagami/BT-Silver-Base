@@ -60,12 +60,14 @@ label ginny_menu:
 
     label ginny_secondmenu: #temporary
     menu:
+        "-Inventory-":
+            call screen wardrobe_ginny
         "-Personal Favours-":
             "To be done."
             jump ginny_secondmenu 
-        "-Public Favours-":
-            "To be done."
-            jump ginny_secondmenu
+        #"-Public Favours-":
+        #    "To be done."
+        #    jump ginny_secondmenu
         "-open mouth and blush":
             $ gw_blushed = True
             $ changeGinny(1,2)
@@ -116,81 +118,81 @@ label ginny_menu:
                 $ gw_shaved = True
             call ginny_main("...", 1, 1)
             jump ginny_secondmenu
-        "-Select Top-":
-            label ginny_selecttop: #temporary
-            menu:
-                "-Top_1-":
-                    call ginny_change("top","top_1")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Top_2-":
-                    call ginny_change("top","top_2")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Top_3-":
-                    call ginny_change("top","top_3")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Top_4-":
-                    call ginny_change("top","top_4")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Top_5-":
-                    call ginny_change("top","top_5")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Top_6-":
-                    call ginny_change("top","top_6")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Top_7-":
-                    call ginny_change("top","top_7")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Purple Sweater-":
-                    call ginny_change("top","purple_sweater")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Trainning Shirt":
-                    call ginny_change("top","sports")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selecttop
-                "-Go back-":
-                    jump ginny_secondmenu
+        #"-Select Top-":
+        #    label ginny_selecttop: #temporary
+        #    menu:
+        #        "-Top_1-":
+        #            call ginny_change("top","top_1")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Top_2-":
+        #            call ginny_change("top","top_2")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Top_3-":
+        #            call ginny_change("top","top_3")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Top_4-":
+        #            call ginny_change("top","top_4")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Top_5-":
+        #            call ginny_change("top","top_5")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Top_6-":
+        #            call ginny_change("top","top_6")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Top_7-":
+        #            call ginny_change("top","top_7")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Purple Sweater-":
+        #            call ginny_change("top","purple_sweater")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Trainning Shirt":
+        #            call ginny_change("top","sports")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selecttop
+        #        "-Go back-":
+        #            jump ginny_secondmenu
 
-        "-Select Bottom-":
-            label ginny_selectskirt: #temporary
-            menu:
-                "-Skirt_1":
-                    call ginny_change("skirt","skirt_1")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selectskirt
-                "-Skirt_2":
-                    call ginny_change("skirt","skirt_2")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selectskirt
-                "-Skirt_3":
-                    call ginny_change("skirt","skirt_3")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selectskirt
-                "-Skirt_4":
-                    call ginny_change("skirt","skirt_4")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selectskirt
-                "-Skirt_5":
-                    call ginny_change("skirt","skirt_5")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selectskirt
-                "-Skirt_6":
-                    call ginny_change("skirt","skirt_6")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selectskirt
-                "-Trainning Shorts":
-                    call ginny_change("skirt","gym")
-                    call ginny_main("Of course, sir.", 1)
-                    jump ginny_selectskirt
-                "-Go back-":
-                    jump ginny_secondmenu
+        #"-Select Bottom-":
+        #    label ginny_selectskirt: #temporary
+        #    menu:
+        #        "-Skirt_1":
+        #            call ginny_change("skirt","skirt_1")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selectskirt
+        #        "-Skirt_2":
+        #            call ginny_change("skirt","skirt_2")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selectskirt
+        #        "-Skirt_3":
+        #            call ginny_change("skirt","skirt_3")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selectskirt
+        #        "-Skirt_4":
+        #            call ginny_change("skirt","skirt_4")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selectskirt
+        #        "-Skirt_5":
+        #            call ginny_change("skirt","skirt_5")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selectskirt
+        #        "-Skirt_6":
+        #            call ginny_change("skirt","skirt_6")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selectskirt
+        #        "-Trainning Shorts":
+        #            call ginny_change("skirt","gym")
+        #            call ginny_main("Of course, sir.", 1)
+        #            jump ginny_selectskirt
+        #        "-Go back-":
+        #            jump ginny_secondmenu
 
         "-Select Panty-":
             label ginny_selectpanty: #temporary
