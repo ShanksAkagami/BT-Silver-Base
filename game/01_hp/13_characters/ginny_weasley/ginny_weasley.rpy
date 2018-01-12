@@ -1,7 +1,7 @@
 label ginny_menu:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 
-    $ changeGinny(1,2,1,665,10) #whatt
+    $ changeGinny(1,2,1,665,0) #whatt
 
     if not ginny_met:
         $ ginny_met = True
@@ -139,7 +139,7 @@ label ginny_menu:
         hide screen ginny_weasley
         show screen blkfade
         with d3
-        ">Ginny puts her clothes back on as fast as she can always with an angry glare towards you"
+        ">Ginny puts her clothes back on as fast as she can, always with an angry glare towards you"
         #">She looks very out of it"
         
         $ gw_wear_robes = True
@@ -193,13 +193,42 @@ label ginny_menu:
         #"-Public Favours-":
         #    "To be done."
         #    jump ginny_secondmenu
+        "-Handjob-":
+            $ gw_blushed = True
+            $ genie_sprite_xpos = 300
+            call gen_main("!!!", 4, 2)
+            $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/handjob.png"
+            #call ginny_main("And you call this starting with something easy?", 1, 6, 7)
+            $ changeGinny(1,6,8,389,0) #167
+            call ginny_main("...", 1)
+            $ renpy.pause()
+            call ginny_main("...", 1)
+            $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
+
+            $ changeGinny(1,6,8,655,0) #167
+            hide screen genie_sprite
+            with d3
+            "not finished"
+            jump ginny_secondmenu
+
+        "-Kneel-":
+            $ gw_kneeling = True
+            $ changeGinny(1,2,1,665,30)
+            call ginny_main("...", 1, 6, 8)
+            $ renpy.pause()
+            $ gw_kneeling = False
+            call ginny_main("...", 1)
+            $ changeGinny(1,2,1,665,0)
+            "not finished"
+            jump ginny_secondmenu
+
         "-open mouth and blush":
             $ gw_blushed = True
-            $ changeGinny(1,2)
+            $ changeGinny(1,2,1)
             jump ginny_secondmenu
         "-close mouth and unblush":
             $ gw_blushed = False
-            $ changeGinny(1,1)
+            $ changeGinny(1,1,1)
             jump ginny_secondmenu
         "-Toggle shirt-":
             if gw_wear_top == True:
@@ -329,6 +358,7 @@ label ginny_masturbate:
     g4 "no pleases, just do it."
     call ginny_main("...", 1, 6, 8) #blushed
     $ gw_botharms = True
+    $ gw_legsopen = True
     call ginny_main(".....", 1, 10, 11)
     ">She slowly starts grinding her mound against her hand."
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/covering2.png"
@@ -376,8 +406,12 @@ label ginny_masturbate:
     m "that's it slut... keep going..."
     call ginny_main("{size=-4}(I need a cock){/size}", 1, 12, 12)
     call ginny_masturbates_alittle
-    call ginny_main("{size=-4}(this feels so good... with someone... watching me...){/size}", 1, 12, 13)
+    call ginny_main("{size=-4}(this feels so good... with someone... watching me...){/size}", 1, 12, 12)
     call ginny_masturbates_alittle
+    call ginny_main("{size=-4}(I-I think I'm...I'm going to...{/size}")
+    ">Ginny's thighs are squeezing faster and faster."
+    call ginny_masturbates_alittle
+    call ginny_main("Cum!......", 1, 12, 13)
     $ gw_squirting = True
     
     hide screen ginny_weasley
@@ -400,10 +434,35 @@ label ginny_masturbate:
     $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/squirting.png"
     call ginny_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}Yes!!!!!{image=textheart}{image=textheart}{image=textheart}{/size}", 1, 12, 14)
 
+    ">Suddenly, her body goes rigid and her abdominal muscles pulse in waves as orgasm rocks the young girl's body."
+
+    hide screen ginny_weasley
+    show screen blkfade
+    with d3
+    $ renpy.play('sounds/fall.wav')
+    ">Ginny's legs, suddenly too weak to hold her body, collapse beneath her and she falls to the floor."
+    "By the sands!"
+    #"Cum coats your otherwise pristine desk. The only sounds in the room are your heavy breaths and the slow *plat* *plat* of your cum dripping off your desk."
+    #show screen genie_jerking_sperm_02
+    #with d3
+    $ gw_squirting = False
+    $ gw_kneeling = True
+    $ gw_ypos = 50
+    show screen ginny_weasley
+    hide screen blkfade
+    with d3
+    "Ginny looks up at you from the floor with a dazed look."
+    call ginny_main("...", 1,12,14)
+    call ginny_main("i can'T believe I did that.", 1,12,14)
+    #call ginny_main("Can i have my points now!", 1, 1, 2, 1)
 
     $ gw_botharms = False
-    #$ gw_squirting = False
+    $ gw_legsopen = False
     $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/dripping.png"
+    $ gw_squirting = True
+    $ gw_kneeling = False
+    $ gw_ypos = 0
+
     call ginny_main("",1)
     g9 "{size=-4}(That was great...){/size}"
     call ginny_main("Can I go now?")
@@ -446,21 +505,25 @@ label ginny_masturbates_alittle:
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
     call ginny_main("",1)
     #$ renpy.pause (0.001)
+    #$ gw_legsopen = False
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/covering2.png"
     call ginny_main("",1)
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
     call ginny_main("",1)
     #$ renpy.pause (0.001)
+    #$ gw_legsopen = True
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/covering2.png"
     call ginny_main("",1)
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
     call ginny_main("",1)
     #$ renpy.pause (0.001)
+    #$ gw_legsopen = False
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/covering2.png"
     call ginny_main("",1)
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
     call ginny_main("",1)
     #$ renpy.pause (0.001)
+    #$ gw_legsopen = True
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/covering2.png"
     call ginny_main("",1)
     return

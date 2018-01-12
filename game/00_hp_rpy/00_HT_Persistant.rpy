@@ -312,9 +312,18 @@ label __init_variables:
     
     if not hasattr(renpy.store,'gw_arms_both'): #important!
         $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
+
+    if not hasattr(renpy.store,'gw_arms_right'): #important!
+        $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
     
     if not hasattr(renpy.store,'gw_squirt'): #important!
         $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/squirting.png"
+
+    if not hasattr(renpy.store,'gw_kneeling'):
+        $ gw_kneeling = False
+
+    if not hasattr(renpy.store,'gw_legsopen'):
+        $ gw_legsopen = False
     
     
     $ override_persistant = False

@@ -469,7 +469,7 @@ label door:
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
             jump summon_snape
 
-        "-FH_init-":
+        "-FH_init (reset some stuff)-":
             call FH_init
             jump day_main_menu
         "-Never mind-":

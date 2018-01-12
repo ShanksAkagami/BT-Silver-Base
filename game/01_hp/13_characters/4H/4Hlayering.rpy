@@ -51,48 +51,68 @@ screen ginny_weasley:
     #else:
     #    $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00.png"
         #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
-    add gw_hair_layer xpos gw_xpos ypos gw_ypos
-    add gw_torso xpos gw_xpos ypos gw_ypos
-    if not gw_botharms:
-        $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
-    else:
-        $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/open.png"
+    if not gw_kneeling:
+        $ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/default.png"
+        add gw_hair_layer xpos gw_xpos ypos gw_ypos
+        add gw_torso xpos gw_xpos ypos gw_ypos
+        #if not gw_botharms:
+        #    $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
+        #else:
+        #    $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/open.png"
+        if not gw_legsopen:
+            $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
+        else:
+            $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/open.png"
 
-    add gw_legs xpos gw_xpos ypos gw_ypos
-    if not gw_botharms:
-        add gw_arms_left xpos gw_xpos ypos gw_ypos
-        add gw_arms_right xpos gw_xpos ypos gw_ypos
+        add gw_legs xpos gw_xpos ypos gw_ypos
+        if not gw_botharms:
+            add gw_arms_left xpos gw_xpos ypos gw_ypos
+            add gw_arms_right xpos gw_xpos ypos gw_ypos
+        
+        if not gw_wear_top and not gw_wear_bra:
+            $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
+            #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+        else:
+            $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/pressed.png"
+            #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
     
-    if not gw_wear_top and not gw_wear_bra:
-        $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
-        #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
-    else:
-        $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/pressed.png"
-        #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
-    
-    add gw_tits xpos gw_xpos ypos gw_ypos
-    add gw_head xpos gw_xpos ypos gw_ypos
+        add gw_tits xpos gw_xpos ypos gw_ypos
+
+        add gw_head xpos gw_xpos ypos gw_ypos
 
     #add gw_nose xpos gw_xpos ypos gw_ypos
     #add gw_cheeks xpos gw_xpos ypos gw_ypos
-    add gw_eyes xpos gw_xpos ypos gw_ypos
-    add gw_mouth xpos gw_xpos ypos gw_ypos
+        add gw_eyes xpos gw_xpos ypos gw_ypos
+        add gw_mouth xpos gw_xpos ypos gw_ypos
 
     ###BLUSHED
-    if gw_blushed:
-        add gw_cheeks xpos gw_xpos ypos gw_ypos #Add blush
+        if gw_blushed:
+            add gw_cheeks xpos gw_xpos ypos gw_ypos #Add blush
     
     ###PUSSY
-    add gw_pussy xpos gw_xpos ypos gw_ypos #add pussy
-    if not gw_shaved:
-        add gw_pubic xpos gw_xpos ypos gw_ypos
+        add gw_pussy xpos gw_xpos ypos gw_ypos #add pussy
+        if not gw_shaved:
+            add gw_pubic xpos gw_xpos ypos gw_ypos
 
-    if gw_squirting:
-        add gw_squirt xpos gw_xpos ypos gw_ypos
+        if gw_squirting:
+            add gw_squirt xpos gw_xpos ypos gw_ypos
 
 
-    if gw_botharms:
-        add gw_arms_both xpos gw_xpos ypos gw_ypos
+        if gw_botharms:
+            add gw_arms_both xpos gw_xpos ypos gw_ypos
+    else:
+        $ gw_torso = "01_hp/13_characters/ginny_weasley/body/kneel/kneel.png"
+        add gw_hair_layer xpos gw_xpos ypos gw_ypos
+        add gw_torso xpos gw_xpos ypos gw_ypos
+        add gw_head xpos gw_xpos ypos gw_ypos
+
+    
+        add gw_eyes xpos gw_xpos ypos gw_ypos
+        add gw_mouth xpos gw_xpos ypos gw_ypos
+        if gw_blushed:
+            add gw_cheeks xpos gw_xpos ypos gw_ypos #Add blush
+    
+    
 
 
 
@@ -302,7 +322,7 @@ init python: ###Method Definition for new characters
 
         gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/default.png"
         gw_arms_left = "01_hp/13_characters/ginny_weasley/body/arms_left/default.png"
-        gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
+        #gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
         #gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
         gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
         gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"

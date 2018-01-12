@@ -15,6 +15,7 @@ label FH_init:
     $ gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/1.png"
     $ gw_eyes = "01_hp/13_characters/ginny_weasley/body/eyes/1.png"
     $ gw_cheeks = "01_hp/13_characters/ginny_weasley/body/cheeks/blush.png"
+    $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
     $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/squirting.png"
     $ gw_arms_boths = 1
@@ -30,6 +31,8 @@ label FH_init:
     $ gw_squirting = False
     $ gw_shaved = False
     $ gw_botharms = False
+    $ gw_legsopen = False
+    $ gw_kneeling = False
     #$ gw_wear_vest = True
     #$ gw_wear_stockings = True 
     $ gw_wear_skirt = False
