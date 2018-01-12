@@ -310,6 +310,11 @@ label __init_variables:
     if not hasattr(renpy.store,'ginny_summon'): #important!
         $ ginny_summon = False
     
+    if not hasattr(renpy.store,'gw_arms_both'): #important!
+        $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
+    
+    if not hasattr(renpy.store,'gw_squirt'): #important!
+        $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/squirting.png"
     
     
     $ override_persistant = False

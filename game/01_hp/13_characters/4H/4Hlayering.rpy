@@ -53,9 +53,16 @@ screen ginny_weasley:
         #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
     add gw_hair_layer xpos gw_xpos ypos gw_ypos
     add gw_torso xpos gw_xpos ypos gw_ypos
-    add gw_arms_left xpos gw_xpos ypos gw_ypos
-    add gw_arms_right xpos gw_xpos ypos gw_ypos
+    if not gw_botharms:
+        $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
+    else:
+        $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/open.png"
+
     add gw_legs xpos gw_xpos ypos gw_ypos
+    if not gw_botharms:
+        add gw_arms_left xpos gw_xpos ypos gw_ypos
+        add gw_arms_right xpos gw_xpos ypos gw_ypos
+    
     if not gw_wear_top and not gw_wear_bra:
         $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
         #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
@@ -79,6 +86,13 @@ screen ginny_weasley:
     add gw_pussy xpos gw_xpos ypos gw_ypos #add pussy
     if not gw_shaved:
         add gw_pubic xpos gw_xpos ypos gw_ypos
+
+    if gw_squirting:
+        add gw_squirt xpos gw_xpos ypos gw_ypos
+
+
+    if gw_botharms:
+        add gw_arms_both xpos gw_xpos ypos gw_ypos
 
 
 
@@ -199,7 +213,7 @@ label cho_main(text="",eye=None, eyebrow=None, pupil=None, mouth=None):
     
 label ginny_main(text="", body=None, mouth=None, eyes=None):
     if body!=None:
-        $ changeGinny(body,mouth, eyes)
+        $ changeGinny(body,mouth,eyes)
     if text != "":
         $ renpy.say(ginny, text)
     return
@@ -237,6 +251,8 @@ init python: ###Method Definition for new characters
         global gw_torso
         global gw_arms_left
         global gw_arms_right
+        global gw_arms_both
+        global gw_arms_boths
         global gw_legs
         global gw_tits
         global gw_head
@@ -254,6 +270,7 @@ init python: ###Method Definition for new characters
         global gw_mouth
         #global gw_eyebrow
         global gw_pubic
+        global gw_squirt
         global gw_pussy
         global gw_hair
         global gw_hair_layer
@@ -286,6 +303,7 @@ init python: ###Method Definition for new characters
         gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/default.png"
         gw_arms_left = "01_hp/13_characters/ginny_weasley/body/arms_left/default.png"
         gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
+        #gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
         gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
         gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
         gw_head = "01_hp/13_characters/ginny_weasley/body/head/default.png"
@@ -316,6 +334,7 @@ init python: ###Method Definition for new characters
 
         #gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/"+ginny_mouth+".png"
         gw_pubic = "01_hp/13_characters/ginny_weasley/body/pubic/au_naturel.png"
+        #gw_squirt = "01_hp/13_characters/ginny_weasley/body/pubic/au_naturel.png"
         gw_pussy = "01_hp/13_characters/ginny_weasley/body/genitalia/default.png"
         
         gw_hair =  "01_hp/13_characters/ginny_weasley/body/hair/default.png"
