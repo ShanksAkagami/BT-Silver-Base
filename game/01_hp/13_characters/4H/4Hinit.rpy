@@ -9,7 +9,7 @@ label FH_init:
     $ gw_robes = "01_hp/13_characters/ginny_weasley/clothes/robe/gryff_quidditch.png"
 
     $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/top/top_1.png"
-    $ gw_skirt = "01_hp/13_characters/ginny_weasley/clothes/bottom/3.png"
+    $ gw_skirt = "01_hp/13_characters/ginny_weasley/clothes/bottom/2.png"
     $ gw_bra = "01_hp/13_characters/ginny_weasley/clothes/underwear/black_athlete.png"
     $ gw_panties = "01_hp/13_characters/ginny_weasley/clothes/underwear/black_athlete_bikini.png"
     $ gw_mouth = "01_hp/13_characters/ginny_weasley/body/mouth/lipstick/1.png"
@@ -18,6 +18,7 @@ label FH_init:
     $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
     $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/squirting.png"
+    $ gw_semen = "01_hp/13_characters/ginny_weasley/body/semen/handjob3.png"
     $ gw_arms_boths = 1
     $ gw_zorder = 5
 
@@ -29,6 +30,7 @@ label FH_init:
 
     $ gw_blushed = False
     $ gw_squirting = False
+    $ gw_cummed_on = False
     $ gw_shaved = False
     $ gw_botharms = False
     $ gw_legsopen = False

@@ -324,6 +324,12 @@ label __init_variables:
 
     if not hasattr(renpy.store,'gw_legsopen'):
         $ gw_legsopen = False
+
+    if not hasattr(renpy.store,'gw_cummed_on'):
+        $ gw_cummed_on = False
+
+    if not hasattr(renpy.store,'gw_semen'):
+        $ gw_semen = "01_hp/13_characters/ginny_weasley/body/semen/handjob3.png"
     
     
     $ override_persistant = False

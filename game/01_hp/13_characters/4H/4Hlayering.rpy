@@ -51,9 +51,15 @@ screen ginny_weasley:
     #else:
     #    $ gw_base = "01_hp/13_characters/ginny_weasley/base/base_00.png"
         #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+
+    #$ gw_freckles = "01_hp/13_characters/ginny_weasley/body/overlay/freckles_body.png" #not good when arms change and stuff
+
     if not gw_kneeling:
         $ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/default.png"
         add gw_hair_layer xpos gw_xpos ypos gw_ypos
+        if not gw_botharms:
+            add gw_arms_right xpos gw_xpos ypos gw_ypos
+
         add gw_torso xpos gw_xpos ypos gw_ypos
         #if not gw_botharms:
         #    $ gw_legs = "01_hp/13_characters/ginny_weasley/body/legs/default.png"
@@ -67,7 +73,7 @@ screen ginny_weasley:
         add gw_legs xpos gw_xpos ypos gw_ypos
         if not gw_botharms:
             add gw_arms_left xpos gw_xpos ypos gw_ypos
-            add gw_arms_right xpos gw_xpos ypos gw_ypos
+            #add gw_arms_right xpos gw_xpos ypos gw_ypos
         
         if not gw_wear_top and not gw_wear_bra:
             $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
@@ -114,7 +120,7 @@ screen ginny_weasley:
     
     
 
-
+    #add gw_freckles xpos gw_xpos ypos gw_ypos
 
 
     
@@ -148,6 +154,13 @@ screen ginny_weasley:
         add gw_robes xpos gw_xpos ypos gw_ypos
 
     add gw_hair xpos gw_xpos ypos gw_ypos
+
+
+    ### CUM 
+    if gw_cummed_on:
+        add gw_semen xpos gw_xpos ypos gw_ypos
+
+
     #if cc_wear_acc:
     #    add cc_acc xpos cc_xpos ypos cc_ypos # Add the accessory
     #if cc_wear_vest:
