@@ -456,6 +456,7 @@ label door:
         
         "-Summon Ginny-" if ginny_summon:
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # GINNY'S THEME (placeholder probably)
+            $ ginny_chibi("stand",700)
             jump ginny_menu
         
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:

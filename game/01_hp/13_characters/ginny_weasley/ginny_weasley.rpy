@@ -1,9 +1,10 @@
 label ginny_menu:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 
-    $ changeGinny(1,2,1,665,0) #whatt
 
-    if not ginny_met:
+    #### First Meeting ####
+    if not ginny_met: 
+        $ changeGinny(1,2,1,665,0) #whatt
         $ ginny_met = True
         call ginny_main("Hello professor, you wanted to see me?") 
         $ changeGinny(1,1)
@@ -122,6 +123,7 @@ label ginny_menu:
                 $ ginny_steps = 1
                 $ ginny_whoring += 1
                 $ ginny_mad += 1 
+                $ ginny_pf_undress += 1
 
                 with d3
                 jump day_main_menu
@@ -190,15 +192,18 @@ label ginny_menu:
                 $ ginny_steps = 1
                 $ ginny_whoring += 2 
                 $ ginny_mad += 3
+                $ ginny_pf_giveunderwear += 1
                 
                 with d3
                 jump day_main_menu
 
-            "\"Masturbate for me\"":
-                call ginny_masturbate
+            #"\"Masturbate for me\"":
+            #    call ginny_masturbate
                 #jump ginny_secondmenu
 
+    #### Second Meeting - Shave Event ####
     elif ginny_steps == 1: ###Shave Event
+        $ gw_wear_accessory1 = True
         
         call ginny_main("{size=+10}I want my diary back right now{/size}", 1, 2, 11) #angry
         g4 "{size=+10}And I want you to shave your pussy right now{/size}"
@@ -221,6 +226,7 @@ label ginny_menu:
         call ginny_main("You asshole...", 1, 10, 11)
         g9 "So, what's gonna be?"
         call ginny_main("Fine...", 1, 2, 11)
+        ">You give her a sharp razor"
         
         hide screen ginny_weasley
         show screen blkfade
@@ -267,21 +273,38 @@ label ginny_menu:
         call ginny_main("Fine...", 1)
         
         hide screen ginny_weasley
-        $ gw_shaved = True
+        #$ gw_shaved = False
         show screen blkfade
         with d3
+        $ gw_pubic = "01_hp/13_characters/ginny_weasley/body/pubic/growing.png"
+        $ gw_crying = True
+        $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_1.png"
         show screen ginny_weasley
         hide screen blkfade
         with d3
 
-        call ginny_main("Are you happy now?", 1)
+        call ginny_main("Why are you doing this to me?", 1)
+        g9 "Don't stop now"
+        call ginny_main("{size=-4}(...I've never been so humiliated in my whole life...){/size}",1,10,6) #mouth,eye
+
+        hide screen ginny_weasley
+        show screen blkfade
+        with d3
+        $ gw_shaved = True
+        #gw_pubic = "01_hp/13_characters/ginny_weasley/body/pubic/growing.png"
+        $ gw_crying = True
+        $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_2.png"
+        show screen ginny_weasley
+        hide screen blkfade
+        with d3
+
+        call ginny_main("Are you happy now?", 1,16,11)
         g9 "Yes, very happy, you can go for now"
 
         hide screen ginny_weasley
         show screen blkfade
         with d3
         ">Ginny puts her clothes back on as fast as she can, always with an angry glare towards you"
-        #">She looks very out of it"
         
         $ gw_wear_robes = gw_wear_robes_temp
         $ gw_wear_top = gw_wear_top_temp
@@ -293,7 +316,7 @@ label ginny_menu:
         hide screen blkfade
 
         g9 "See you soon"
-        call ginny_main("Whatever", 1)
+        call ginny_main("Whatever", 1,17,11)
 
         $ renpy.play('sounds/door.mp3')
         hide screen ginny_weasley
@@ -304,21 +327,300 @@ label ginny_menu:
         with d3
         jump day_main_menu
 
+    #### Third Meeting - Personal Favours Start ####
     else:
         call ginny_main("Yes?", 1, 2, 11) #angry
-        
+
+        #### Return Panties ####
+        #### Panties Soaked ####
+        if ginny_pf_pantythief == 3:
+            m "Here are your panties [ginny_name]"
+            $ the_gift = gw_panties # Ginny's panties.
+            show screen gw_gift
+            with d3
+            $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
+            ">You give Ginny her panties back"
+            hide screen gw_gift
+            with d3
+            $ ginny_pf_pantythief = 4 #you gave ginny panties soaked
+
+
+            call ginny_main("They are covered in... semen",1,6,8)
+            call ginny_main("Those were my favorite panties, you ruined them",1,7,11)
+            m "Why the surprise? I told you I was going to cum on them"
+            call ginny_main("I thought you were joking...",1,17,11)
+            g9 "nope"
+            call ginny_main("Well, these will require some serious cleaning before I can put them on again...",1,17,8)
+            m "Or you could put them on now."
+            call ginny_main("What?",1,3,3)
+            call ginny_main("I really would rather not, [gw_genie_name]...",1,15,4)
+            g9 "now I really want you to put them"
+
+                    #call her_main("What?","body_72")
+            call ginny_main("[genie_name], you are joking, right?",1,15,6)
+            m "I am not..."
+            call ginny_main("B-but...",1,16,8)
+            call ginny_main("........................................",1,16,7)
+            call ginny_main("(Must you always have your way, [gw_genie_name]?)",1,17,7)
+            m "What was that, [ginny_name]?"
+            call ginny_main("It's nothing, [gw_genie_name].",1,17,8)
+            call ginny_main("Putting my panties back on!",1,15,8)
+            hide screen ginny_main
+            with d3
+            show screen blktone8
+            with d3
+            ">Ginny hesitantly puts on her panties..."
+            ">A tiny stream of cum trickles down one of her legs..."
+            ">Ginny looks very uncomfortable..."
+            $ gw_wear_panties = True
+            $ gw_squirting = True
+            $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/dripping_cum.png"
+            hide screen blktone8
+            with d3
+            call ginny_main("(This feels funny...)",1,2,8)
+            call ginny_main("(but not in a bad way...)",1,1,8)
+            call ginny_main("Can I go now?",1,2,6)
+            m "Yes, you can go now"
+            call ginny_main("Thank you, [gw_genie_name].",1,8,2)
+            call ginny_main("(Why am I thanking him, I should be angry...)",1,9,5)
+            call ginny_main("(*Ugh*...whatever...)",1,9,16)
+
+
+            $ renpy.play('sounds/door.mp3')
+            hide screen ginny_weasley
+            call reset_ginny_2
+            with d3
+            jump day_main_menu
+
+                        #"\"Why don't you clean them now?\"":
+                        #$ cleaned_panties = True
+                        #call her_main("Clean them How? You don't have a wash basin in here.","body_31")
+                        #m "You're right, you'll have to use your mouth then."
+                        #call her_main("My mouth?!","body_72")
+                        #m "What's the big deal? It wouldn't be the first time you've tasted my cum."
+                        #call her_main("It's a bit different! I wore these panties before I gave them to you.","body_30")
+                        #call her_main("Not to mention that your cum is all cold and slimey...","body_32")
+                        #m "Well in that case hand them back."
+                        #call her_main("What? Can't I just put them on?","body_122") 
+                        #m "I'm afraid not, you clean them now or you hand them back."
+                        #call her_main("{size=-4}Fine...{/size}","body_118")
+                        #m "What was that?"
+                        #call her_main("I said I'll clean them ok!","body_132")
+                        #m "Well..."
+                        #call her_main("...","body_118")
+                        #">Hermione reluctantly puts her cum-soaked panties in her mouth."
+                        #call her_main("Mmmmhhhhh!","body_42")
+                        #m "That's it, not as bas as you thought now is it?"
+                        #call her_main("...","body_222")
+                        #m "Make sure you get them nice and clean now..."
+                        #call her_main("*gulp*","body_224")
+                        #m "That's it. Do you think they're clean yet."
+                        #call her_main("*Mmmhhhmmm*","body_125")
+                        #m "Well then you can probably take them out of your mouth."
+                        #call her_main("*Ahhhhh*","body_135")
+                        #m "There, nice and clean."
+                        #call her_main("*Yes [genie_name]*","body_121")
+        #### Panties NonSoaked ####
+        elif ginny_pf_pantythief == 1:
+            call ginny_main("Can I have my panties back?",1,1,1)
+            menu:
+                "-Sure-":
+                    g9 "of course, but first let me see if you're doing your part"
+                    call ginny_main("What do you mean?",1, 2, 6)
+                    g9 "Lift up your skirt"
+
+                    call ginny_main("...",1, 2, 6)
+                    $ gw_liftskirt = True
+                    $ gw_wear_skirt = False
+                    call ginny_main("",1,1,7)
+                    $ renpy.pause (1)
+                    $ gw_liftskirt = False
+                    $ gw_wear_skirt = True
+                    call ginny_main("That's enough",1,1,1)
+
+                    m "(I was enjoying the view...)"
+                    $ the_gift = gw_panties # Ginny's panties.
+                    show screen gw_gift
+                    with d3
+                    $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
+                    ">You give Ginny her panties back"
+                    #">You found Ginevra Weasley's diary."
+                    hide screen gw_gift
+                    with d3
+                    $ ginny_pf_pantythief = 4 #you gave ginny panties soaked
+                    #m "Ginevra Weasley??"
+                    call ginny_main("There's nothing wrong with them, [gw_genie_name]?)",1,1,1)
+                    m "Of course not... What did you expect?"
+                    call ginny_main("I don't know...",1,1,1)
+                    call ginny_main("Putting my panties back on!")
+                    hide screen ginny_main
+                    with d3
+                    show screen blktone8
+                    with d3
+                    ">Ginny puts on her panties..."
+                    #">A tiny stream of cum trickles down one of her legs..."
+                    ">She looks a bit embarrassed for doing it in front of you..."
+                    $ gw_wear_panties = True
+                    hide screen blktone8
+                    with d3
+                    call ginny_main("(Feels good to wear panties again)",1,1,1)
+                    call ginny_main("(But I felt soo free before...)",1,1,1)
+                    $ renpy.play('sounds/door.mp3')
+                    hide screen ginny_weasley
+                    call reset_ginny_2
+                    with d3
+                    jump day_main_menu
+                "-Not Yet-":
+                    #she mad
+                    call ginny_main("....", 1, 17, 11) #mouth eye
+
+
 
     label ginny_secondmenu: #temporary
     menu:
         "-Inventory-":
             call screen wardrobe_ginny
         "-Personal Favours-":
+            #### First Personal Favour ####
+            if ginny_steps == 2: #### If Never Done Any Personal Favour ####
+                m "[ginny_name], I'd like yo-"
+                call ginny_main("No", 1, 17, 11) #mouth eye
+                m "What?"
+                call ginny_main("No, I won't do it", 1, 17, 11) #mouth eye
+                m "You don't even know what I was going to ask"
+                call ginny_main("It's gonna be something terrible...", 1, 3, 11) #mouth eye
+                g9 "You look very angry"
+                call ginny_main("{size=+7}Of course I'm angry, you've been blackmailing me and humiliating me{/size}", 1, 3, 11)
+                m "Ok, what can I do to calm you down?"
+                call ginny_main("Just give me back my diary please", 1, 17, 6)
+                g9 "We both know I can't do that"
+                m "This might be a dangerous artifact"
+                call ginny_main("....", 1, 17, 7)
+                m "anything else?"
+                call ginny_main("............", 1, 17, 7)
+
+                call ginny_main("You're very close with professor Snape right...?",1,2,7)
+                m "yes..."
+                call ginny_main("I'm terrible at potions...",1,2,7)
+                m "I can talk with him about your grades.."
+                call ginny_main("Cool",1,1,5)
+                m "So, can you do something for me now?"
+                call ginny_main("...What exactly do you want, [gw_genie_name]?",1,2,10)
+                $ ginny_steps = 3
+
+
+
             menu:
-                "-Masturbate-":
+                "-What Panties-":
+                    m "What kind of panties are you wearing?"
+                    $ gw_blushed = True
+                    if ginny_pf_pantythief_time == 0:
+                        call ginny_main("...Would you like to... see them?",1,2,7) #mouth,eye
+                    else:
+                        call ginny_main("...Would you like to... see them again, [gw_genie_name]?",1,2,7) #mouth,eye
+
+                    g9 "I'd love to"
+                    $ gw_liftskirt = True
+                    $ gw_wear_skirt = False
+                    call ginny_main("...",1,1,7)
+
+                    ">You stare at her panties-"
+                    "That's a pretty sexy underwear..."
+                    call ginny_main("I suppose...",1,2,7)
+                    ">The girl tries to avoid looking at you"
+                    ">You study her face..."
+                    pause
+                    ">And wonder what's going through her mind right now."
+                    pause
+                    m "You don't look too embarrassed..."
+                    if ginny_pf_pantythief_time == 0:
+                        #call ginny_main("...Would you like to... see them?",1,2,7) #mouth,eye
+                        call ginny_main("Well, it's not like I'm naked...",1,2,15)
+                    else:
+                        call ginny_main("Well, it's not like the first time you make me do this...",1,2,15)
+
+                        #call ginny_main("...Would you like to... see them again, [gw_genie_name]?",1,2,7) #mouth,eye
+
+                    pause
+                    "I like your panties..."
+                    call ginny_main("Thank you, [gw_genie_name]...",1,1,5)
+                    ">You keep looking into her eyes"
+                    call ginny_main("[gw_genie_name], please... Now you are embarrassing me.",1,6,6)
+                    m "Ok, you can cover it"
+                    $ gw_liftskirt = False
+                    $ gw_wear_skirt = True
+                    call ginny_main("",1,1,1)
+
+                    g9 "I'd like you to give them to me"
+                    if ginny_pf_pantythief_time == 0:
+                        call ginny_main("What?",1,3,3)
+                        #call ginny_main("...Would you like to... see them?",1,2,7) #mouth,eye
+                        #call ginny_main("Well, it's not like I'm naked...",1,2,15)
+                        g9 "Your panties"
+                    #else:
+                    #    call ginny_main("I thought so...",1,2,15)
+
+                    call ginny_main("I knew it wouldn't be that easy...",1,17,5)
+                    m "I'll return them to you next time I summon you"
+                    if ginny_pf_pantythief_time == 0:
+                        call ginny_main("...",1,17,7)
+                        call ginny_main("do I have any other option?",1,17,8)
+                        g9 "not really"
+                    call ginny_main("Fine...",1,17,9)
+                    call ginny_main("",1,17,1)
+                    $ gw_wear_panties = False
+                    
+                    $ the_gift = gw_panties # Ginny's panties.
+                    show screen gw_gift
+                    with d3
+                    $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
+                    ">You received Ginny's panties"
+                    $ ginny_pf_pantythief = 1 #you have ginny panties
+                    hide screen gw_gift
+                    with d3
+                    g9 "Thank you"
+                    call ginny_main("What do you plan on doing with them?",1,15,6)
+                    g9 "I'll probably jerk off and cum on them"
+                    call ginny_main("...",1,3,3)
+                    call ginny_main("I knew I shouldn't have asked...",1,10,7)
+                    call ginny_main("Can I go now?",1,10,6)
+                    m "Yes, but can you lift your skirt one more time before going?"
+                    call ginny_main("...",1,10,8)
+                    m "..."
+
+
+                    $ gw_liftskirt = True
+                    $ gw_wear_skirt = False
+                    call ginny_main("...",1,1,7)
+
+                    $ gw_liftskirt = False
+                    $ gw_wear_skirt = True
+                    call ginny_main("bye",1,1,7)
+                    g9 "And remember to not wear any panties until I give these back to you"
+                    if ginny_pf_pantythief_time == 0:
+                        call ginny_main("What??? You never said anything about that",1,3,3)
+                        g9 "I'm saying it now"
+                    call ginny_main("Fine, whatever", 1, 10, 11)
+                    g9 "good, see you soon"
+                    call ginny_main("{size=-7}...Am I getting wet...?{/size}",1,2,8)
+                    $ ginny_pf_pantythief_time = 1
+                    $ renpy.play('sounds/door.mp3')
+                    hide screen ginny_weasley
+                    call reset_ginny_2
+                    with d3
+                    jump day_main_menu
+
+
+
+                #"-Undress For Me":
+                #    call ginny_masturbate
+                #    jump ginny_secondmenu 
+
+                "-Masturbate- incomplete":
                     call ginny_masturbate
                     jump ginny_secondmenu 
 
-                "-Handjob-":
+                "-Handjob- incomplete":
                     show screen blkfade
                     ">You stand up and walk around your desk, standing in front of Ginny."
                     hide screen bld1
@@ -327,8 +629,6 @@ label ginny_menu:
                     show screen desk_02
                     $ genie_chibi_xpos = -20
                     $ genie_chibi_ypos = 10
-                    #$ g_c_u_pic = "jerking_off_02_ani"
-                    #show screen g_c_u
                     with fade
                     $ genie_sprite_xpos = 300
                     $ genie_sprite_ypos = 20
@@ -336,7 +636,6 @@ label ginny_menu:
                     hide screen blktone
                     hide screen blkfade
                     with d5
-                    #pause
                     call ginny_main("....", 1, 10, 7) #mouth,eye
 
                     ">You open your cloak and pull out your cock."
@@ -359,12 +658,8 @@ label ginny_menu:
 
                     ">She walks towards you and takes a firm hold of it with her right hand"
 
-
-                    #call ginny_undress
-                    #call ginny_main("Whatever", 1)
                     $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/handjob.png"
                     $ changeGinny(1,6,8,389,0) #167
-                    #call gen_main("", 4, 2)
                     g9 "You can start now"
                     call ginny_main("(*Hmmph* At least it isn't small...)", 1, 10, 7) 
                     call ginny_main("(I can't even fit my hand around it.)", 1, 10, 8) 
@@ -388,10 +683,6 @@ label ginny_menu:
                     g4 "Gods yes..."
                     g4 "I'm cumming!!!"
 
-                    #$ g_c_c_u_pic = "jerking_off_cum_ani"
-                    #show screen g_c_c_u
-                    #$ luna_wear_cum_under = True
-                    #$ luna_cum = 10
                     show screen white 
                     pause.1
                     hide screen white
@@ -409,21 +700,11 @@ label ginny_menu:
                     ">You start shooting your load directly into Ginny's body, coating her in cum."
                     g9 "Argh! by the gods {size=+10}YES!{/size}"
 
-                    #hide screen genie_sprite
                     with d3
                     g9 "That hit the spot..."
                     call ginny_main("({image=textheart}{image=textheart}{image=textheart})", 1,2,12)
-                    #call luna_main("Professor!", 8, 1, 3, 1)
-                    #call luna_main("How could you! Cumming on your students {size=-10}pussy{/size}...", 7, 8, 2, 1)
                     m "Ahh... that was fantastic slut..."
-                    #call ginny_main("but...", 6, 2, 4, 2) 
-                    #call ginny_main("Do you need a little more encouragement?", 8, 1, 4, 1) 
-                    #m "What are you thinking?"
-                    #call ginny_main("......", 9, 8, 3, 1) 
-                    #call ginny_main("And you call this starting with something easy?", 1, 6, 7)
-                    #$ renpy.pause()
-                    #call ginny_handjob_alittle
-                    #call ginny_main("", 1)
+
                     $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
 
                     $ changeGinny(1,6,8,655,0) #167
@@ -454,13 +735,107 @@ label ginny_menu:
                     jump day_main_menu
                     
 
-                "-Kneel-":
+                "-Kneel- incomplete":
                     call ginny_undress
                     $ gw_kneeling = True
-                    $ changeGinny(1,2,1,665,30)
-                    call ginny_main("...", 1, 6, 8)
+                    $ changeGinny(1,2,7,150,170)
+                    $ genie_sprite_xpos = 530
+                    $ genie_sprite_ypos = 0
+                    call gen_main_mirror("", 4, 5)
+                    call ginny_main("...", 1, 6, 7)
                     $ renpy.pause()
                     $ gw_kneeling = False
+                    call ginny_main("...", 1)
+                    $ changeGinny(1,2,1,665,0)
+                    "not finished"
+                    jump ginny_secondmenu
+
+                "-Blow- incomplete":
+                    call ginny_undress
+                    $ changeGinny(1,2,1,400,212)
+                    
+                    call ginny_main("fine, let me tie up my hair", 1, 2, 1) 
+                    hide screen ginny_weasley
+                    show screen blkfade
+                    with d3
+                    $ gw_hair = "01_hp/13_characters/ginny_weasley/body/hair/tied.png"
+                    $ gw_hair_layer = "01_hp/13_characters/ginny_weasley/body/layerhair/blank.png"
+                    show screen ginny_weasley
+                    hide screen blkfade
+                    with d3
+
+                    $ gw_kneeling = True
+                    $ changeGinny(1,2,1,400,212)
+                    #
+                    hide screen bld1
+                    hide screen genie
+                    show screen chair_02
+                    show screen desk_02
+                    $ genie_chibi_xpos = -20
+                    $ genie_chibi_ypos = 10
+                    #$ g_c_u_pic = "jerking_off_02_ani"
+                    #show screen g_c_u
+                    with fade
+                    $ genie_sprite_xpos = 300
+                    $ genie_sprite_ypos = 0
+                    call gen_main("", 4, 2)
+                    
+
+                    hide screen blktone
+                    hide screen blkfade
+                    with d5
+
+                    #pause
+                    call gen_main("", 4, 5)
+                    g9 "suck it"
+                    $ gw_blushed = True
+                    call ginny_main("ok....", 1, 2, 7) #mouth,eye
+                    call ginny_blowjob_alittle
+                    call ginny_main("you enjoying it?", 1, 2, 7) #mouth,eye
+                    g9 "yes, keep going"
+                    call ginny_blowjob_alittle
+
+
+                    call ginny_main("....", 1, 34, 7) #mouth,eye
+                    call ginny_main("...", 1, 34, 8)
+                    #
+                    $ renpy.pause()
+                    $ gw_kneeling = False
+                    call ginny_main("...", 1)
+                    $ changeGinny(1,2,1,665,0)
+                    $ gw_hair = "01_hp/13_characters/ginny_weasley/body/hair/default.png"
+                    $ gw_hair_layer = "01_hp/13_characters/ginny_weasley/body/layerhair/default.png"
+                    call gen_main("", 4, 2)
+                    "not finished"
+                    jump ginny_secondmenu
+
+                "-Anal- incomplete":
+                    call ginny_undress
+
+                    hide screen bld1
+                    hide screen genie
+                    show screen chair_02
+                    show screen desk_02
+                    $ genie_chibi_xpos = -20
+                    $ genie_chibi_ypos = 10
+                    #$ g_c_u_pic = "jerking_off_02_ani"
+                    #show screen g_c_u
+                    with fade
+                    $ gw_doggystyle = True
+                    $ changeGinny(1,2,7,200,170)
+                    $ genie_sprite_xpos = 530
+                    $ genie_sprite_ypos = 0
+                    call gen_main_mirror("", 4, 2)
+                    call gen_main_mirror("", 4, 5)
+                    
+
+                    hide screen blktone
+                    hide screen blkfade
+                    with d5
+
+                    call ginny_main("...", 1, 6, 7)
+                    $ renpy.pause()
+                    $ gw_doggystyle = False
                     call ginny_main("...", 1)
                     $ changeGinny(1,2,1,665,0)
                     "not finished"
@@ -524,7 +899,7 @@ label ginny_menu:
         
         "-Dismiss Her-":
             hide screen ginny_weasley
-            #call reset_ginny
+            call reset_ginny_2
             with d3
             jump day_main_menu
 
@@ -538,9 +913,25 @@ label reset_ginny:
     $ gw_squirting = False
     $ gw_botharms = False
     $ gw_cummed_on = False
+    $ gw_crying = False
     call ginny_change("bra","silk_bra")
     call ginny_change("panty","silk_panties")
     return
+
+label reset_ginny_2:
+    $ gw_blushed = False
+    $ gw_squirting = False
+    $ gw_botharms = False
+    $ gw_cummed_on = False
+    $ gw_crying = False
+    return
+
+label ginny_dismiss:
+    $ renpy.play('sounds/door.mp3')
+    hide screen ginny_weasley
+    call reset_ginny_2
+    with d3
+    jump day_main_menu
 
 label ginny_undress:
     
@@ -611,7 +1002,6 @@ label ginny_masturbate:
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
     
     call ginny_main("{size=-4}(I can't believe I'm doing this in front of him...){/size}", 1, 10, 9)
-    #call ginny_main("Yes", 1, 1, 10)
     hide screen ginny_weasley
     show screen blkfade
     with d3
@@ -664,7 +1054,6 @@ label ginny_masturbate:
     call ginny_main("...",1, 10, 7)
     ">You notice Ginny start grinding her hips a little faster."
     
-
     call ginny_masturbates_alittle
     m "It seems to me that you might be enjoying this a little too much..."
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
@@ -721,12 +1110,6 @@ label ginny_masturbate:
     hide screen white
     with hpunch
     
-    #hide screen ginny_weasley
-    
-
-
-
-    
     $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/squirting.png"
     call ginny_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}Yes!!!!!{image=textheart}{image=textheart}{image=textheart}{/size}", 1, 12, 14)
 
@@ -738,9 +1121,7 @@ label ginny_masturbate:
     $ renpy.play('sounds/fall.wav')
     ">Ginny's legs, suddenly too weak to hold her body, collapse beneath her and she falls to the floor."
     "By the sands!"
-    #"Cum coats your otherwise pristine desk. The only sounds in the room are your heavy breaths and the slow *plat* *plat* of your cum dripping off your desk."
-    #show screen genie_jerking_sperm_02
-    #with d3
+
     $ gw_squirting = False
     $ gw_kneeling = True
     $ gw_ypos = 50
@@ -791,6 +1172,7 @@ label ginny_masturbate:
     $ ginny_steps = 1
     $ ginny_whoring += 5 
     $ ginny_mad += 5 
+    $ ginny_pf_masturbate += 1
     call reset_ginny
     with d3
     jump day_main_menu
@@ -830,6 +1212,47 @@ label ginny_handjob_alittle:
             jump ginny_handjob_again
         else:
             return
+
+label ginny_blowjob_alittle:
+    
+    $ genie_sprite_xpos = 300
+    $ genie_sprite_ypos = 0
+
+    $ count_gw = 3
+    label ginny_blowjob_again:
+
+        call gen_main("", 4, 2)
+        $ changeGinny(1,31,8,279,225) #279 225
+        call ginny_main("", 1, 31, 8) #mouth,eye
+        $ changeGinny(1,32,8,263,216) #167
+        call ginny_main("", 1, 32, 8) #mouth,eye
+        $ changeGinny(1,33,8,253,212) #167
+        call ginny_main("", 1, 33, 8)
+        call ginny_main("", 1, 33, 8)
+        $ changeGinny(1,32,8,263,216)
+        call ginny_main("", 1, 32, 8) #mouth,eye
+        $ changeGinny(1,31,8,279,225)
+        call ginny_main("", 1, 31, 8) #mouth,eye
+        $ changeGinny(1,31,8,279,225) #167
+        call ginny_main("", 1, 31, 8) #mouth,eye
+        $ changeGinny(1,32,8,263,216) #167
+        call ginny_main("", 1, 32, 8) #mouth,eye
+        $ changeGinny(1,33,8,253,212) #167
+        call ginny_main("", 1, 33, 8)
+        call ginny_main("", 1, 33, 8)
+        $ changeGinny(1,32,8,263,216)
+        call ginny_main("", 1, 32, 8) #mouth,eye
+        $ changeGinny(1,31,8,279,225)
+        call ginny_main("", 1, 31, 8) #mouth,eye
+        call gen_main("", 4, 5)
+
+        $ count_gw -= 1
+        if count_gw > 0:
+            jump ginny_blowjob_again
+        else:
+            return
+
+    return
 
 #"Liftoff!"
     

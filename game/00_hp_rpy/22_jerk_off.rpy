@@ -19,6 +19,8 @@ label jerk_off:
             jump  how_to_finish
         "-Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress:
             $ cum_on_panties = True #True when choose to cum on Hermione's panties.
+        "-Ginny's panties" if ginny_pf_pantythief == 1:
+            $ ginny_pf_pantythief = 2
         "-On the floor!-":
             $ cum_on_the_floor = True #TRUE when chosen to cum on the floor.
             pass
@@ -41,6 +43,10 @@ if cum_on_the_floor:
 if cum_on_panties:
     $ hg_ps_PantyThief_SoakedPantiesFlag = True #TRUE when you have the panties in your possession (before you return them to Hermione).
     ">You cum all over Hermione's panties, and then use them to wipe the cum off the floor..."
+    ">You received the item: \"Cum-soaked panties\"."
+if ginny_pf_pantythief == 2:
+    $ ginny_pf_pantythief = 3 #panties covered in cum
+    ">You cum all over Ginny's panties, and then use them to wipe the cum off the floor..."
     ">You received the item: \"Cum-soaked panties\"."
  
 hide screen blkfade

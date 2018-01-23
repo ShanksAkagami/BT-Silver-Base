@@ -216,9 +216,7 @@ label equip_jeans_short:
 
 ### Gryffindor Stockings ###
 label equip_gryyf_stockings:
-    "teste2"
     if whoring < 3:
-        "teste1h"
         call her_main("Is that!?","body_11")
         call her_main("A pair of Gryffindor stockings!?","body_48")
         m "Yep?"

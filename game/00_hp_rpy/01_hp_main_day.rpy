@@ -332,6 +332,7 @@ call Day_Request_Block
 
 label day_main_menu:
 
+hide screen ginny_chibi
 
 if phoenix_is_feed:
     show screen phoenix_food

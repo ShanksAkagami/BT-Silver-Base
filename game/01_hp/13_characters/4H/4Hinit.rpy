@@ -8,7 +8,7 @@ label FH_init:
 
     $ gw_robes = "01_hp/13_characters/ginny_weasley/clothes/robe/gryff_quidditch.png"
 
-    $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/top/top_1.png"
+    $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/tops/1.png"
     $ gw_skirt = "01_hp/13_characters/ginny_weasley/clothes/bottom/2.png"
     $ gw_bra = "01_hp/13_characters/ginny_weasley/clothes/underwear/black_athlete.png"
     $ gw_panties = "01_hp/13_characters/ginny_weasley/clothes/underwear/black_athlete_bikini.png"
@@ -17,10 +17,21 @@ label FH_init:
     $ gw_cheeks = "01_hp/13_characters/ginny_weasley/body/cheeks/blush.png"
     $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/default.png"
     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
+    $ gw_lift_skirt_1 = "01_hp/13_characters/ginny_weasley/body/special/high_short_1.png"
+    $ gw_lift_skirt_2 = "01_hp/13_characters/ginny_weasley/body/special/high_short_2.png"
+
     $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/squirting.png"
     $ gw_semen = "01_hp/13_characters/ginny_weasley/body/semen/handjob3.png"
+    $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_0.png"
+    $ gw_pubic = "01_hp/13_characters/ginny_weasley/body/pubic/au_naturel.png"
+    $ gw_hair =  "01_hp/13_characters/ginny_weasley/body/hair/default.png"
+    $ gw_hair_layer = "01_hp/13_characters/ginny_weasley/body/layerhair/default.png"
+    $ gw_accessory1 = "01_hp/13_characters/ginny_weasley/clothes/accessories/1.png"
+    $ gw_accessory2 = "01_hp/13_characters/ginny_weasley/clothes/accessories/3.png"
+
     $ gw_arms_boths = 1
     $ gw_zorder = 5
+    $ ginny_flip = 1
 
     
     ###Clothing flags
@@ -28,13 +39,19 @@ label FH_init:
     $ gw_wear_top = False
     $ gw_wear_bra = True
 
+    $ gw_wear_accessory1 = False
+    $ gw_wear_accessory2 = False
+
     $ gw_blushed = False
     $ gw_squirting = False
     $ gw_cummed_on = False
+    $ gw_crying = False
     $ gw_shaved = False
     $ gw_botharms = False
+    $ gw_liftskirt = False
     $ gw_legsopen = False
     $ gw_kneeling = False
+    $ gw_doggystyle = False
     #$ gw_wear_vest = True
     #$ gw_wear_stockings = True 
     $ gw_wear_skirt = False
@@ -42,11 +59,29 @@ label FH_init:
     $ gw_wear_robes = True
     #$ gw_wear_acc = True
 
+    ##Favour Stuff
+    $ ginny_pf_undress = 0
+    $ ginny_pf_giveunderwear = 0
+    $ ginny_pf_handjob = 0
+    $ ginny_pf_masturbate = 0
+    $ ginny_pf_pantythief = 0
+    $ ginny_pf_pantythief_time = 0
+
+    ##Chibi
+
+    $ ginny_chibi_image = "01_hp/13_characters/ginny_weasley/chibis/ginny_stand.png" 
+    $ ginny_chibi_xpos = 500
+    $ ginny_chibi_ypos = 250
+    $ ginny_chibi_zorder = 4
+
+
     ##Stats
     $ ginny_whoring = 0
     $ ginny_mad = 0
     $ ginny_points = 0
     $ ginny_steps = 0
+    $ gw_genie_name = "Professor"
+    $ ginny_name = "Ginny"
 
     ##Flags
     $ diary_found = False

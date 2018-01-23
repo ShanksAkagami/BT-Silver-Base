@@ -322,6 +322,9 @@ label __init_variables:
     if not hasattr(renpy.store,'gw_kneeling'):
         $ gw_kneeling = False
 
+    if not hasattr(renpy.store,'gw_doggystyle'):
+        $ gw_doggystyle = False
+
     if not hasattr(renpy.store,'gw_legsopen'):
         $ gw_legsopen = False
 
@@ -330,6 +333,30 @@ label __init_variables:
 
     if not hasattr(renpy.store,'gw_semen'):
         $ gw_semen = "01_hp/13_characters/ginny_weasley/body/semen/handjob3.png"
+
+    if not hasattr(renpy.store,'gw_hair'):
+        $ gw_hair =  "01_hp/13_characters/ginny_weasley/body/hair/default.png"
+
+    if not hasattr(renpy.store,'gw_hair_layer'):
+        $ gw_hair_layer = "01_hp/13_characters/ginny_weasley/body/layerhair/default.png"
+
+    if not hasattr(renpy.store,'gw_liftskirt'):
+        $ gw_liftskirt = False
+
+    if not hasattr(renpy.store,'gw_lift_skirt_1'):
+        $ gw_lift_skirt_1 = "01_hp/13_characters/ginny_weasley/body/special/high_short_1.png"
+
+    if not hasattr(renpy.store,'gw_lift_skirt_2'):
+        $ gw_lift_skirt_2 = "01_hp/13_characters/ginny_weasley/body/special/high_short_2.png"
+    #if gw_wear_top:
+    #    add gw_top xpos gw_xpos ypos gw_ypos # Add the top
+    #if gw_liftskirt:
+    #    add gw_lift_skirt_2
+    if not hasattr(renpy.store, 'ginny_pf_pantythief_time'):
+        $ ginny_pf_pantythief_time = 0
+
+    if not hasattr(renpy.store, 'diary_read'):
+        call FH_init
     
     
     $ override_persistant = False

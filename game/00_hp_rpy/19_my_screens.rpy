@@ -719,6 +719,13 @@ screen gift:
     zorder 5
     add "01_hp/18_store/00.png"
     add the_gift at Position(xpos=140, ypos=0)
+
+screen gw_gift:
+    zorder 5
+    add "01_hp/18_store/00.png"
+    add the_gift at Position(xpos=260, ypos=-140)
+    if ginny_pf_pantythief == 3:
+        add "01_hp/13_characters/ginny_weasley/clothes/underwear/panties/semen_dripping.png" at Position(xpos=260, ypos=-140)
     
     
 
