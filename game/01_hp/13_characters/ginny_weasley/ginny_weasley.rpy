@@ -506,10 +506,11 @@ label ginny_menu:
                 call ginny_main("Cool",1,1,5)
                 m "So, can you do something for me now?"
                 call ginny_main("...What exactly do you want, [gw_genie_name]?",1,2,10)
-                $ ginny_steps = 3
+                $ ginny_steps = 3 #### You two have an agreement
+                $ ginny_mad = 0
+                $ ginny_whoring = 1
 
-
-
+            #### Personal Favours ####
             menu:
                 "-What Panties-":
                     m "What kind of panties are you wearing?"
@@ -603,6 +604,8 @@ label ginny_menu:
                     call ginny_main("Fine, whatever", 1, 10, 11)
                     g9 "good, see you soon"
                     call ginny_main("{size=-7}...Am I getting wet...?{/size}",1,2,8)
+                    $ ginny_whoring += 1
+
                     $ ginny_pf_pantythief_time = 1
                     $ renpy.play('sounds/door.mp3')
                     hide screen ginny_weasley
@@ -615,6 +618,190 @@ label ginny_menu:
                 #"-Undress For Me":
                 #    call ginny_masturbate
                 #    jump ginny_secondmenu 
+
+                "-Nice Tits-":
+                    g9 "I wanna see them"
+                    ">You say that while pointing to her tits"
+                    call ginny_main("You want too... see my breasts, [gw_genie_name]?", 1, 2, 6) #mouth eye
+                    g9 "Yes, I want you to show me your tits"
+                    call ginny_main("...", 1, 10, 7)
+                    call ginny_main("No touching!", 1, 2, 6)
+                    m "No touching"
+                    call ginny_main("...Ok, but seriously, no touching!", 1, 10, 7)
+                    g9 "No touching"
+                    #black screen
+                    hide screen ginny_weasley
+                    show screen blkfade
+                    with d3
+                    $ gw_botharms = True
+                    $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/blank.png"
+                    $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/tops/lifting/1.png"
+                    $ gw_shirt_special = True
+                    $ ginny_chibi("stand_topless",700)
+                    show screen ginny_weasley
+                    hide screen blkfade
+                    with d3
+                    call ginny_main("...", 1, 10, 8)
+                    g9 "You have amazing tits [ginny_name]"
+                    g9 "But I can't see them quite well from this distance"
+                    g9 "You know, old eyes..."
+                    call ginny_main("{size=-5}(Old eyes, right...){/size}",1,6,10)
+                    m "Come closer [ginny_name], let me take a better look..."
+                    call ginny_main("No touching",1,12,11)
+                    m "No touching"
+                    call ginny_main("No touching",1,1,1)
+
+                    hide screen ginny_weasley
+                    show screen blkfade
+                    with d3
+                    $ ginny_chibi("stand_topless",400)
+                    show screen ginny_weasley
+                    hide screen blkfade
+                    with d3
+                    g9 "Much better now"
+                    call ginny_main("...", 1, 1, 8)
+                    menu:
+                        "Start jerking off?":
+                            pass
+
+                        "Who are you kidding? Start jerking off":
+                            pass
+
+
+                    m "Just stand still, [ginny_name]..."
+
+                    ">You stare at Ginny's breasts with hunger..."
+                    hide screen ginny_main
+                    hide screen blktone
+                    with d3
+                    ">You reach under the desk and grab your cock..."
+                    hide screen blktone8
+                    with d3
+                    hide screen genie
+                    show screen genie_jerking_off
+                    with d3
+
+                    pause
+
+                    call ginny_main("[gw_genie_name]?!!",1,3,3)
+                    call ginny_main("Are you... Jerking off...?",1,3,4)
+                    ">You keep stroking your hard cock..."
+                    #call her_main("[genie_name], no...","body_199")
+                    call ginny_main("You must... Put it away...",1,7,8)
+                    m "Stop whining [ginny_name]. I'm not touching you, am I?"
+                    g9 "Besides, you can't keep your eyes off of it"
+                    call ginny_main("That's not true", 1,16,11)
+                    call ginny_main("I should go",1,17,11)
+                    m "You go and everyone will receive a copy of your diary"
+                    m "Can you imagine yor parents face once they read what's in there?"
+                    call ginny_main("Please don't",1,3,4)
+                    m "Just stay there, with a view like this I'll be done soon"
+                    call ginny_main("...Fine",1,17,7)
+                    call ginny_main("...",1,17,8)
+                    m "Yes... Yes, like this..."
+                    ">Ginny is trying to see your dick over the table"
+                    call ginny_main("{size=-5}(I never thought [gw_genie_name] would have such a huge dick...){/size}",1,2,8)
+                    call ginny_main("{size=-5}(I can't imagine what that thing would to me...){/size}",1,2,8)
+                    m "Yes, with your tits all naked..."
+                    call ginny_main("{size=-5}(Could I even take that...?){/size}",1,6,8)
+                    call ginny_main("(No Ginny, stop thinking like that.)",1,10,9)
+                    m "Oh, you little slut. You nasty little slut!"
+                    call ginny_main("(This kind of stuff is what got me into this situation in the first place...)",1,6,11)
+                    ">You start to stroke your cock even harder..."
+                    ">Ginny starts looking at it again"
+                    call ginny_main("(It's even bigger now...)",1,3,8)
+
+                    call ginny_main(".......................",1,1,8)
+                    g4 "Yes, I know you want this! Yes!"
+
+                    call ginny_main("(Come on, finish it already, this is killing me...)",1,12,8)
+
+
+                    g4 "Argh! You whore!"
+                    call ginny_main("...",1,12,10)
+
+
+                    hide screen ginny_main
+                    with d3
+                    show screen white 
+                    pause.1
+                    hide screen white
+                    pause.2
+                    show screen white 
+                    pause .1
+                    hide screen white
+                    with hpunch
+                    g4 "Argh! YES!"
+                    hide screen ginny_main
+                    with d3
+                    hide screen bld1
+                    with d3
+                    show screen genie_jerking_sperm
+                    with d3
+                    #pause 3
+                    pause
+
+                    #show screen bld1
+                    #with d3
+                    call ginny_main("Are you done?",1,8,8)
+                    show screen genie_jerking_sperm_02
+                    with d3
+                    g4 "Ah, shit, this feels good..."
+                    ">You notice she's still looking at your dick and that she has a faint smile on her face"
+                    show screen genie
+                    #show screen genie_jerking_off
+                    with d3
+                    call ginny_main("How could you [genie_name]? In front of a young innocent student!",1,3,11)
+                    m "Hey, little missy, we both know that you aren't exactly innocent"
+                    call ginny_main("I don't know what you're talking about...",1,3,16)
+                    m "Yeah.. right"
+                    call ginny_main("{size=-4}(...he sure did cum a lot{image=textheart}){/size}",1,1,10)
+                    hide screen genie_jerking_sperm_02
+                    with d3
+
+                    #show screen white 
+                    #pause.1
+                    #hide screen white
+                    #pause.2
+                    #show screen white 
+                    #pause .1
+                    #hide screen white
+                    #with hpunch
+                    #g4 "Argh! YES!"
+                    #hide screen bld1
+                    #with d3
+                    #$ no_blinking = True #When True - blinking animation is not displayed. 
+                    #show screen jerking_off_cum
+                    #hide screen blkfade
+                    #hide screen bld1
+                    ##with d3
+                    #pause
+                    #show screen bld1
+
+
+                    $ gw_botharms = False
+                    $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
+                    $ gw_top = "01_hp/13_characters/ginny_weasley/clothes/tops/1.png"
+                    $ gw_shirt_special = False
+                    $ ginny_chibi("stand",700)
+                    show screen ginny_weasley
+                    hide screen blkfade
+                    with d3
+                    call ginny_main("I'll be going now",1,10,2)
+                    m "Yes yes, of course, we should this again"
+                    call ginny_main("{size=-4}(...I wouldn't mind{image=textheart}){/size}",1,1,10)
+
+
+                    $ ginny_whoring += 1
+
+                    $ ginny_pf_showtits_time = 1
+                    $ renpy.play('sounds/door.mp3')
+                    hide screen ginny_weasley
+                    call reset_ginny_2
+                    with d3
+                    jump day_main_menu
+
+
 
                 "-Masturbate- incomplete":
                     call ginny_masturbate
@@ -642,7 +829,8 @@ label ginny_menu:
                     call gen_main("", 4, 5)
                     $ gw_blushed = True
                     call ginny_main("What the hell are you doing??", 1, 3, 3)
-                    g9 "I read at your diary about the many handjobs you gave around. I want one too."
+                    g9 "I read at your diary about the many handjobs you gave around."
+                    g9 "I want one too."
                     call ginny_main("I'm not going to do that", 1, 7, 11)
                     g9 "Are you sure? How do you think Hagrid would feel if he knew about everything that's in this diary?."
                     call ginny_main("{size=+7}Harry!! His name is Harry!!{/size}", 1, 3, 11)
@@ -660,7 +848,11 @@ label ginny_menu:
 
                     $ gw_arms_right = "01_hp/13_characters/ginny_weasley/body/arms_right/handjob.png"
                     $ changeGinny(1,6,8,389,0) #167
-                    g9 "You can start now"
+                    call ginny_main("....")
+                    m "....."
+                    call ginny_main("....")
+                    m "....."
+                    m "You can start now"
                     call ginny_main("(*Hmmph* At least it isn't small...)", 1, 10, 7) 
                     call ginny_main("(I can't even fit my hand around it.)", 1, 10, 8) 
                     ">Ginny slowly starts stroking your cock with her hand, her movements seem experienced."
@@ -713,7 +905,7 @@ label ginny_menu:
                     with d3
                     g9 "that looks great on you hahaha"
                     call ginny_main("How am I supposed to get to the dorms like this?",1,10,8) #mouth,eye
-                    g9 "You can always just weat my cum around, It does look good on you"
+                    g9 "You can always just wear my cum around, It does look good on you"
                     call ginny_main("Yeah, right...",1,10,11) #mouth,eye
 
                     ">She tries to clean her clothes as best as she can"
@@ -747,6 +939,21 @@ label ginny_menu:
                     $ gw_kneeling = False
                     call ginny_main("...", 1)
                     $ changeGinny(1,2,1,665,0)
+                    "not finished"
+                    jump ginny_secondmenu
+
+                "-Show back- incomplete":
+                    call ginny_undress
+                    $ gw_spread_ass = True
+                    $ gw_wear_accessory1 = False
+
+                    call ginny_main("...", 1, 2, 7)
+                    $ renpy.pause()
+                    $ gw_spread_ass = False
+                    $ gw_wear_accessory1 = True
+
+                    call ginny_main("...", 1)
+                    #$ changeGinny(1,2,1,665,0)
                     "not finished"
                     jump ginny_secondmenu
 

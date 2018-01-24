@@ -58,7 +58,7 @@ screen ginny_weasley:
 
     #$ gw_freckles = "01_hp/13_characters/ginny_weasley/body/overlay/freckles_body.png" #not good when arms change and stuff
 
-    if not gw_kneeling and not gw_doggystyle:
+    if not gw_kneeling and not gw_doggystyle and not gw_spread_ass:
         $ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/default.png"
         add gw_hair_layer xpos gw_xpos ypos gw_ypos
         if not gw_botharms and not gw_liftskirt:
@@ -80,6 +80,9 @@ screen ginny_weasley:
             #add gw_arms_right xpos gw_xpos ypos gw_ypos
         
         if not gw_wear_top and not gw_wear_bra:
+            $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
+            #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
+        elif gw_shirt_special:
             $ gw_tits = "01_hp/13_characters/ginny_weasley/body/tits/default.png"
             #add gw_base xpos gw_xpos ypos gw_ypos #Add the base body
         else:
@@ -113,9 +116,11 @@ screen ginny_weasley:
 
         if gw_wear_accessory1:
             add gw_accessory1 xpos gw_xpos ypos gw_ypos
-    elif not gw_doggystyle: #Kneeling
+    elif gw_kneeling: #Kneeling
         add gw_hair_layer xpos gw_xpos ypos gw_ypos
         $ gw_torso = "01_hp/13_characters/ginny_weasley/body/kneel/kneel.png"
+        
+        #$ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/ass_open.png"
         #$ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/doggystyle3.png"
         add gw_torso xpos gw_xpos ypos gw_ypos
         add gw_head xpos gw_xpos ypos gw_ypos
@@ -129,7 +134,7 @@ screen ginny_weasley:
         if gw_blushed:
             add gw_cheeks xpos gw_xpos ypos gw_ypos #Add blush
     
-    else:   #doggystyle
+    elif gw_doggystyle:   #doggystyle
         #$ gw_torso = "01_hp/13_characters/ginny_weasley/body/kneel/kneel.png"
         $ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/doggystyle3.png"
         add gw_hair_layer xpos gw_xpos ypos gw_ypos
@@ -143,7 +148,23 @@ screen ginny_weasley:
             add gw_cheeks xpos gw_xpos ypos gw_ypos #Add blush
 
     #add gw_freckles xpos gw_xpos ypos gw_ypos
-
+    elif gw_spread_ass: #Spreadin ass
+        add gw_hair_layer xpos gw_xpos ypos gw_ypos
+        #$ gw_torso = "01_hp/13_characters/ginny_weasley/body/kneel/kneel.png"
+        
+        add gw_head xpos gw_xpos ypos gw_ypos
+        add gw_hair xpos gw_xpos ypos gw_ypos
+        $ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/ass_open.png"
+        #$ gw_torso = "01_hp/13_characters/ginny_weasley/body/torso/doggystyle3.png"
+        add gw_torso xpos gw_xpos ypos gw_ypos
+        if gw_wear_accessory1:
+            add gw_accessory1 xpos gw_xpos ypos gw_ypos
+        add "01_hp/13_characters/ginny_weasley/body/layerhair/default_2.png" xpos gw_xpos ypos gw_ypos
+    
+        add gw_eyes xpos gw_xpos ypos gw_ypos
+        #add gw_mouth xpos gw_xpos ypos gw_ypos
+        if gw_blushed:
+            add gw_cheeks xpos gw_xpos ypos gw_ypos #Add blush
 
     
     
@@ -179,7 +200,7 @@ screen ginny_weasley:
     if gw_wear_robes:
         add gw_robes xpos gw_xpos ypos gw_ypos
 
-    if not gw_kneeling:
+    if not gw_kneeling and not gw_spread_ass:
         add gw_hair xpos gw_xpos ypos gw_ypos
     #else:
     #    add gw_hair_layer xpos gw_xpos ypos gw_ypos
@@ -326,8 +347,8 @@ init python: ###Method Definition for new characters
         if g_chibi is not None:
             if g_chibi == "stand":
                 ginny_chibi_image = "01_hp/13_characters/ginny_weasley/chibis/ginny_stand.png" 
-            #if g_chibi == "stand_topless":
-            #    ginny_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand_topless.png" 
+            if g_chibi == "stand_topless":
+                ginny_chibi_image = "01_hp/13_characters/ginny_weasley/chibis/ginny_stand_topless.png" 
             #if g_chibi == "stand_naked":
             #    ginny_chibi_image = "01_hp/13_characters/luna/chibis/walk/l_walk_n_01.png" 
             #else:

@@ -322,6 +322,9 @@ label __init_variables:
     if not hasattr(renpy.store,'gw_kneeling'):
         $ gw_kneeling = False
 
+    if not hasattr(renpy.store,'gw_spread_ass'):
+        $ gw_spread_ass = False
+
     if not hasattr(renpy.store,'gw_doggystyle'):
         $ gw_doggystyle = False
 
@@ -354,6 +357,15 @@ label __init_variables:
     #    add gw_lift_skirt_2
     if not hasattr(renpy.store, 'ginny_pf_pantythief_time'):
         $ ginny_pf_pantythief_time = 0
+
+    if not hasattr(renpy.store, 'ginny_pf_showtits'):
+        $ ginny_pf_showtits = 0
+
+    if not hasattr(renpy.store, 'ginny_pf_showtits_time'):
+        $ ginny_pf_showtits_time = 0
+
+    if not hasattr(renpy.store, 'gw_shirt_special'):
+        $ gw_shirt_special = False
 
     if not hasattr(renpy.store, 'diary_read'):
         call FH_init

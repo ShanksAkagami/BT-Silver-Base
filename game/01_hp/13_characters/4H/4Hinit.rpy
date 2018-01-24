@@ -51,12 +51,14 @@ label FH_init:
     $ gw_liftskirt = False
     $ gw_legsopen = False
     $ gw_kneeling = False
+    $ gw_spread_ass = False
     $ gw_doggystyle = False
     #$ gw_wear_vest = True
     #$ gw_wear_stockings = True 
     $ gw_wear_skirt = False
     $ gw_wear_panties = True
     $ gw_wear_robes = True
+    $ gw_shirt_special = False
     #$ gw_wear_acc = True
 
     ##Favour Stuff
@@ -66,6 +68,8 @@ label FH_init:
     $ ginny_pf_masturbate = 0
     $ ginny_pf_pantythief = 0
     $ ginny_pf_pantythief_time = 0
+    $ ginny_pf_showtits = 0
+    $ ginny_pf_showtits_time = 0
 
     ##Chibi
 
