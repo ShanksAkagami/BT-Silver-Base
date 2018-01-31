@@ -2104,6 +2104,17 @@ screen groping_naked_tits:
     add "groping_naked_tits_ani" at Position(xpos=-200+140, ypos=10)
     add "groping_01_blinking" at Position(xpos=-200+140, ypos=10)
     zorder 1 #Otherwise chair is on top.
+
+screen no_groping_ginny: #Facing Genie.
+    tag favor
+    add "01_hp/13_characters/ginny_weasley/chibis/groping/000.png" at Position(xpos=-200+140, ypos=10)
+    #add "groping_01_blinking" at Position(xpos=-200+140, ypos=10)
+
+screen groping_ginny: 
+    tag favor
+    add "ginny_groping_01" at Position(xpos=-200+140, ypos=10)
+    #add "groping_01_blinking" at Position(xpos=-200+140, ypos=10)
+    zorder 1 #Otherwise chair is on top.
     
 ### JERKING OFF ###
 

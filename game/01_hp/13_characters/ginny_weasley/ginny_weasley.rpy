@@ -357,7 +357,7 @@ label ginny_menu:
             g9 "now I really want you to put them"
 
                     #call her_main("What?","body_72")
-            call ginny_main("[genie_name], you are joking, right?",1,15,6)
+            call ginny_main("[gw_genie_name], you are joking, right?",1,15,6)
             m "I am not..."
             call ginny_main("B-but...",1,16,8)
             call ginny_main("........................................",1,16,7)
@@ -419,7 +419,7 @@ label ginny_menu:
                         #m "Well then you can probably take them out of your mouth."
                         #call her_main("*Ahhhhh*","body_135")
                         #m "There, nice and clean."
-                        #call her_main("*Yes [genie_name]*","body_121")
+                        #call her_main("*Yes [gw_genie_name]*","body_121")
         #### Panties NonSoaked ####
         elif ginny_pf_pantythief == 1:
             call ginny_main("Can I have my panties back?",1,1,1)
@@ -620,10 +620,15 @@ label ginny_menu:
                 #    jump ginny_secondmenu 
 
                 "-Nice Tits-":
-                    g9 "I wanna see them"
-                    ">You say that while pointing to her tits"
-                    call ginny_main("You want too... see my breasts, [gw_genie_name]?", 1, 2, 6) #mouth eye
-                    g9 "Yes, I want you to show me your tits"
+                    if ginny_pf_showtits_time == 0:
+                        g9 "I wanna see them"
+                        ">You say that while pointing to her tits"
+                        call ginny_main("You want too... see my breasts, [gw_genie_name]?", 1, 2, 6) #mouth eye
+                        g9 "Yes, I want you to show me your tits"
+                    else:
+                        g9 "I wanna see them again"
+                        ">You say that while pointing to her tits"
+                        #call ginny_main("You want too... see my breasts, [gw_genie_name]?", 1, 2, 6) #mouth eye
                     call ginny_main("...", 1, 10, 7)
                     call ginny_main("No touching!", 1, 2, 6)
                     m "No touching"
@@ -659,13 +664,34 @@ label ginny_menu:
                     hide screen blkfade
                     with d3
                     g9 "Much better now"
-                    call ginny_main("...", 1, 1, 8)
-                    menu:
-                        "Start jerking off?":
-                            pass
+                    if ginny_pf_showtits_time == 0:
+                        call ginny_main("...", 1, 1, 8)
 
-                        "Who are you kidding? Start jerking off":
-                            pass
+                        menu:
+                            "Start jerking off?":
+                                pass
+    
+                            "Who are you kidding? Start jerking off":
+                                pass
+
+                            "teste":
+                                hide screen hermione_04 #Stands with tits out.
+                                hide screen genie
+                                show screen ctc
+                                show screen groping_ginny
+                                with d1
+                                hide screen blkfade
+                                with d5
+                                pause
+                                show screen bld1
+                                with d3
+                                #call her_head("............","body_200")
+                                #m "Very good..."
+                                #call her_head(".....","body_203")
+                    else:
+                        call ginny_main("You're going to start jerking off now aren't you?", 1, 1, 7)
+                        g9 "You know me so well"
+                        call ginny_main("...", 1, 1, 8)
 
 
                     m "Just stand still, [ginny_name]..."
@@ -683,33 +709,56 @@ label ginny_menu:
 
                     pause
 
-                    call ginny_main("[gw_genie_name]?!!",1,3,3)
-                    call ginny_main("Are you... Jerking off...?",1,3,4)
-                    ">You keep stroking your hard cock..."
-                    #call her_main("[genie_name], no...","body_199")
-                    call ginny_main("You must... Put it away...",1,7,8)
-                    m "Stop whining [ginny_name]. I'm not touching you, am I?"
-                    g9 "Besides, you can't keep your eyes off of it"
-                    call ginny_main("That's not true", 1,16,11)
-                    call ginny_main("I should go",1,17,11)
-                    m "You go and everyone will receive a copy of your diary"
-                    m "Can you imagine yor parents face once they read what's in there?"
-                    call ginny_main("Please don't",1,3,4)
-                    m "Just stay there, with a view like this I'll be done soon"
-                    call ginny_main("...Fine",1,17,7)
-                    call ginny_main("...",1,17,8)
-                    m "Yes... Yes, like this..."
-                    ">Ginny is trying to see your dick over the table"
-                    call ginny_main("{size=-5}(I never thought [gw_genie_name] would have such a huge dick...){/size}",1,2,8)
-                    call ginny_main("{size=-5}(I can't imagine what that thing would to me...){/size}",1,2,8)
-                    m "Yes, with your tits all naked..."
-                    call ginny_main("{size=-5}(Could I even take that...?){/size}",1,6,8)
-                    call ginny_main("(No Ginny, stop thinking like that.)",1,10,9)
-                    m "Oh, you little slut. You nasty little slut!"
-                    call ginny_main("(This kind of stuff is what got me into this situation in the first place...)",1,6,11)
-                    ">You start to stroke your cock even harder..."
-                    ">Ginny starts looking at it again"
-                    call ginny_main("(It's even bigger now...)",1,3,8)
+                    if ginny_pf_showtits_time == 0:
+                        call ginny_main("[gw_genie_name]?!!",1,3,3)
+                        call ginny_main("Are you... Jerking off...?",1,3,4)
+                        ">You keep stroking your hard cock..."
+                        call ginny_main("You must... Put it away...",1,7,8)
+                        m "Stop whining [ginny_name]. I'm not touching you, am I?"
+                        g9 "Besides, you can't keep your eyes off of it"
+                        call ginny_main("That's not true", 1,16,11)
+                        call ginny_main("I should go",1,17,11)
+                        m "You go and everyone will receive a copy of your diary"
+                        m "Can you imagine yor parents face once they read what's in there?"
+                        call ginny_main("Please don't",1,3,4)
+                        m "Just stay there, with a view like this I'll be done soon"
+                        call ginny_main("...Fine",1,17,7)
+                        call ginny_main("...",1,17,8)
+                        m "Yes... Yes, like this..."
+                        ">Ginny is trying to see your dick over the table"
+                        call ginny_main("{size=-5}(I never thought [gw_genie_name] would have such a huge dick...){/size}",1,2,8)
+                        call ginny_main("{size=-5}(I can't imagine what that thing would to me...){/size}",1,2,8)
+                        m "Yes, with your tits all naked..."
+                        call ginny_main("{size=-5}(Could I even take that...?){/size}",1,6,8)
+                        call ginny_main("(No Ginny, stop thinking like that.)",1,10,9)
+                        m "Oh, you little slut. You nasty little slut!"
+                        call ginny_main("(This kind of stuff is what got me into this situation in the first place...)",1,6,11)
+                        ">You start to stroke your cock even harder..."
+                        ">Ginny starts looking at it again"
+                        call ginny_main("(It's even bigger now...)",1,3,8)
+                    else:
+                        g9 "You can't take your eyes off of it huh?"
+                        call ginny_main("That's not true", 1,16,11)
+                        g9 "Yeah, right"
+                        ">You keep stroking your hard cock..."
+                        call ginny_main("I should go",1,17,11)
+                        m "Relax, I won't tell anyone"
+                        call ginny_main("...",1,17,8)
+                        m "Yes... Yes, like this..."
+                        ">Ginny is trying to see your dick over the table"
+                        call ginny_main("{size=-5}(His dick looks even bigger than last time...){/size}",1,2,8)
+                        call ginny_main("{size=-5}(I can't stop imagining what that thing would to me...){/size}",1,2,8)
+                        m "Yes, with your tits all naked..."
+                        call ginny_main("{size=-5}(Could I even take that...?){/size}",1,6,8)
+                        call ginny_main("(No Ginny, stop thinking like that.)",1,10,9)
+                        m "Oh, you little slut. You nasty little slut!"
+                        call ginny_main("(I can't believe I'm such a slut...)",1,6,11)
+                        ">You start to stroke your cock even harder..."
+                        ">Ginny starts looking at it again"
+                        call ginny_main("(It's even bigger now...)",1,3,8)
+
+                    
+                    
 
                     call ginny_main(".......................",1,1,8)
                     g4 "Yes, I know you want this! Yes!"
@@ -751,33 +800,20 @@ label ginny_menu:
                     show screen genie
                     #show screen genie_jerking_off
                     with d3
-                    call ginny_main("How could you [genie_name]? In front of a young innocent student!",1,3,11)
-                    m "Hey, little missy, we both know that you aren't exactly innocent"
-                    call ginny_main("I don't know what you're talking about...",1,3,16)
-                    m "Yeah.. right"
-                    call ginny_main("{size=-4}(...he sure did cum a lot{image=textheart}){/size}",1,1,10)
+                    if ginny_pf_showtits_time == 0:
+                        call ginny_main("How could you [gw_genie_name]? In front of a young innocent student!",1,3,11)
+                        m "Hey, little missy, we both know that you aren't exactly innocent"
+                        call ginny_main("I don't know what you're talking about...",1,3,16)
+                        m "Yeah.. right"
+                        call ginny_main("{size=-4}(...he sure did cum a lot{image=textheart}){/size}",1,1,10)
+                    else:
+                        g9 "Did you enjoy the view [ginny_name]?"
+                        call ginny_main("I don't know what you're talking about...",1,3,16)
+                        m "Yeah.. right"
+                        call ginny_main("{size=-4}(...he sure did cum a lot{image=textheart}){/size}",1,1,10)
+
                     hide screen genie_jerking_sperm_02
                     with d3
-
-                    #show screen white 
-                    #pause.1
-                    #hide screen white
-                    #pause.2
-                    #show screen white 
-                    #pause .1
-                    #hide screen white
-                    #with hpunch
-                    #g4 "Argh! YES!"
-                    #hide screen bld1
-                    #with d3
-                    #$ no_blinking = True #When True - blinking animation is not displayed. 
-                    #show screen jerking_off_cum
-                    #hide screen blkfade
-                    #hide screen bld1
-                    ##with d3
-                    #pause
-                    #show screen bld1
-
 
                     $ gw_botharms = False
                     $ gw_arms_both = "01_hp/13_characters/ginny_weasley/body/arms_both/fingering2.png"
@@ -789,7 +825,11 @@ label ginny_menu:
                     with d3
                     call ginny_main("I'll be going now",1,10,2)
                     m "Yes yes, of course, we should this again"
-                    call ginny_main("{size=-4}(...I wouldn't mind{image=textheart}){/size}",1,1,10)
+                    if ginny_pf_showtits_time == 0:
+                        call ginny_main("{size=-4}(...I wouldn't mind{image=textheart}){/size}",1,1,10)
+                    else:
+                        call ginny_main("{size=-4}(...Can't wait{image=textheart}){/size}",1,1,10)
+
 
 
                     $ ginny_whoring += 1
@@ -800,6 +840,231 @@ label ginny_menu:
                     call reset_ginny_2
                     with d3
                     jump day_main_menu
+
+
+                "-Grope Butt-":
+
+
+                    ###################REQUEST_05 (Level 02) (BUTT MOLESTER).
+
+
+                    hide bld1
+                    with d3
+                    m "Come closer. Let me molest your butt a little."
+                    #First time
+                    stop music fadeout 5.0
+                    call ginny_main("[gw_genie_name]!?",1,3,3) #mouth eye
+                    m "Relax, All I am going to do is squeeze your little butt a couple of times..."
+                    call ginny_main("This is inappropriate, [gw_genie_name]................",1,9,7)
+                    m "Nobody needs to know and your diary is gonna stay safe and sound here in my drawer"
+                    call ginny_main("(Darn it.....!)",1,10,7)
+                    hide screen bld1
+                    with d3
+                    #call her_walk(500, 280, 3, redux_pause = 2)
+                    show screen blkfade
+                    hide screen ginny_chibi
+                    with Dissolve(1)
+                    pause.5
+                    call ginny_main("..................",1,10,5)
+                    call ginny_main("Do you want me to turn around then, [gw_genie_name]?",1,2,5)
+                    play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+                    m "Hm... Yes. Turn around, [hermione_name]."
+                    call ginny_main("As you say, [gw_genie_name]...",1,10,6)
+                    hide screen genie
+                    show screen ctc
+                    show screen no_groping_ginny
+                    with d1
+                    hide screen blkfade
+                    with d5
+                    pause
+                    call ginny_main(".............",1,6,6)
+                    call ginny_main("...........................",1,6,8)
+                    call ginny_main("[gw_genie_name], I would like to be done with this sooner rather than later...",1,7,6)
+                    m "Don't rush me [hermione_name]... Let me savour the moment..."
+                    call ginny_main(".............................",1,17,9)
+                    menu:
+                        m "Hm..."
+                        "-Give her butt a squeeze-":
+                            pass
+                        "-Give her butt a slap-":
+                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                            show screen white
+                            with hpunch
+                            pause.08
+                            hide screen white
+                            show screen bld1
+                            call ginny_main("!!!!!!!!!!!!!",1,3,3)
+                            call ginny_main("[gw_genie_name]!!?",1,17,4)
+                            menu:
+                                "\"Fine, fine... I just couldn't resist....\"":
+                                    call ginny_main(".......................",1,17,6)
+                                    pass
+                                "-Give her butt a slap-":
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("!!!!!!!!!!!!!",1,3,4)
+                                    call ginny_main("[gw_genie_name]....?",1,17,11) #mouth eye
+                                    menu:
+                                        "\"Fine, fine... I just couldn't resist....\"":
+                                            call ginny_main("It's Ok...",1,17,15)
+                                            pass
+                                        "-Give her butt another slap-":
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            call ginny_main("!!!!!!!!!!!!!",1,3,4)
+                                            call ginny_main("[gw_genie_name], what are you doing!?",1,17,5)
+                                            call ginny_main("You said all you are going to do is touch!",1,17,6)
+                                            menu:
+                                                "\"Fine, fine... I just couldn't resist....\"":
+                                                    call ginny_main("Just don't do it again...",1,10,6)
+                                                    pass
+                                                "-Give her butt another slap-":
+                                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                                    show screen white
+                                                    with hpunch
+                                                    pause.08
+                                                    hide screen white
+                                                    show screen bld1
+                                                    call ginny_main("[gw_genie_name], stop this, please...",1,7,9)
+                                                    call ginny_main("What if somebody hears us?",1,9,6)
+                                                    m "Alright, alright... proceeding with groping then..."
+                                                    call ginny_main("................",1,17,6)
+   
+            
+                    pause
+                    show screen groping_ginny
+                    with d7
+                    call ginny_main("!!!!!!?",1,17,8)
+                    m "What is it, [ginny_name]?"
+                    call ginny_main("I can't believe this is really happening...",1,17,9)
+                    call ginny_main("This is so... wrong...",1,2,6)
+                    g9 "Relax, [ginny_name]. It's not like you aren't enjoying this..."
+                    call ginny_main("What? Of course I'm not! You're blackmailing me...",1,11,11)
+                    g9 "Yes, concentrate on that..."
+                    call ginny_main("....................",1,17,11)
+                    show screen bld1
+                    with d3
+                    pause
+                    show screen blktone8
+                    with d3
+                    ">You keep on playing with Ginny's buttocks..."
+                    ">You slide your hands up and down her inner tighs..."
+                    call ginny_main("................",1,3,11)
+                    menu:
+                        "-Slide your hands under her panties-":
+                            ">You slowly slide one of your hands under the fabric of the girl's panties..."
+                            call ginny_main("[gw_genie_name]... What are you...?",1,3,6)
+                            m "It's alright, just try to relax and enjoy yourself"
+                            call ginny_main(".............",1,6,6)
+                            menu:
+                                "-Prod her pussy with one of your fingers-":
+                                    #show screen blkfade
+                                    #with d3
+                                    ">You slide one of your fingers down and place it against the girl's little slit..."
+                                    call ginny_main("[gw_genie_name]?",1,6,4) 
+                                    menu:
+                                        "-Force your finger into her pussy!-":
+                                            ">You force one of your fingers into her little pussy..."
+                                            ">It's very tight and warm..."
+                                            ">it is quite wet as well...  Seems like Ginny's taking pleasure in this..."
+                                            call ginny_main("Ah....",1,2,7)
+                                            call ginny_main("It's inside of me...",1,14,8)
+                                            call ginny_main("No, [gw_genie_name], you must stop now...",1,11,11)
+                                            m "Why? You don't like it?"
+                                            call ginny_main("It doesn't matter, this is where I draw the line,",1,7,11)
+                                            call ginny_main("I'm leaving",1,17,11)
+                                            ">Ginny pulls away from you..."
+                                            m "Heh... I see..."
+                                            m "Well, in that case..."
+                                        "-Let the girl go...-":
+                                            pass
+                                "-Prod her butt-hole instead-":
+                                    #show screen blkfade
+                                    #with d3
+                                    ">You place your one of your thumbs against the girl's little butt-hole..."
+                                    call ginny_main("[gw_genie_name]? What are you planning on doing?",1,6,4)
+                                    menu:
+                                        "-Force your thumb into her butt-hole-":
+                                            ">You force one of your thumbs into her little butt-hole..."
+                                            with hpunch
+                                            call ginny_main("ah... your finger is up my...",1,2,7)
+                                            ">It's very tight and warm inside..."
+                                            call ginny_main("Ah....",1,12,8)
+                                            ">you slowly start to pump your thumb"
+                                            call ginny_main("It's inside of me...",1,4,8)
+                                            ">you rotate thumb as you go"
+                                            call ginny_main("No, [gw_genie_name], you must stop now...",1,6,12)
+                                            ">you pull your thumb out of her tight little asshole..."
+                                            call ginny_main("Thank you-",1,1,7)
+                                            ">...and replace it with two fingers"
+                                            call ginny_main("",1,3,4)
+                                            call ginny_main("B-Bastard!{image=textheart}",1,12,12)
+                                            m "Why? You don't like it?"
+                                            call ginny_main("Yes...",1,14,12)
+                                            call ginny_main("No, no, stop it",1,3,9)
+                                            ">Ginny gathers all the little strenght she has left and pulls away from you..."
+                                            call ginny_main("I should go",1,17,7)
+                                            m "Heh... I see..."
+                                            m "Well, in that case..."
+                                        "-Let the girl go...-":
+                                            pass
+                                "-Stop pushing your luck. Dismiss the girl-":
+                                    pass
+                        "-No. That's enough for today. Dismiss her-":
+                            pass
+
+    
+#                    if whoring <= 5:
+#                        $ whoring +=1
+                    show screen blkfade 
+                    with d5
+                    
+                    stop music fadeout 1.0
+                    ">You release her..."
+                    m "This will do for now."
+                    
+                    hide screen blktone8
+                    hide screen ctc
+                    hide screen bld1
+                    hide screen no_groping_ginny
+                    hide screen groping_ginny
+                    #show screen hermione_blink
+                    $ ginny_chibi("stand",400)
+                    show screen genie
+                    with d1
+                    
+                    hide screen blkfade
+                    with d3
+ 
+                    m "good night [ginny_name]"
+
+                   
+                   
+                    #$ hermione_SC.chibi.xpos = 500 #Near the desk.
+                    #show screen hermione_blink #Hermione stands still.
+                    show screen bld1
+                    hide screen blkfade
+                    with Dissolve(1)
+                    
+                    call ginny_main("..................",1,1,1)#,xpos=370,ypos=0
+                    her "Thank you [gw_genie_name]..."
+                    if daytime:
+                        call ginny_main("Now if you don't mind I'd better go. The classes are about to start.")
+                    else:
+                        call ginny_main("I'd better go now then. It's getting pretty late...")
+
+
+
+
+
 
 
 

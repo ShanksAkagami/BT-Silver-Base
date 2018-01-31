@@ -805,6 +805,51 @@ image ch_hem blink:
     pause 3
     repeat
 
+image ginny_groping_00:
+    "01_hp/13_characters/ginny_weasley/chibis/groping/000.png"
+    pause.2
+
+image ginny_groping_01:
+    "01_hp/13_characters/ginny_weasley/chibis/groping/001.png"
+    pause.9
+    "01_hp/13_characters/ginny_weasley/chibis/groping/002.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/003.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/004.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/003.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/002.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/003.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/004.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/003.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/groping/002.png"
+    pause.2
+    repeat
+
+image ginny_fingering_01:
+    "01_hp/13_characters/ginny_weasley/chibis/fingering/001.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/fingering/002.png"
+    pause.5
+    "01_hp/13_characters/ginny_weasley/chibis/fingering/003.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/fingering/004.png"
+    pause.2
+    repeat
+
+image ginny_fingering_02:
+    "01_hp/13_characters/ginny_weasley/chibis/fingering/005.png"
+    pause.2
+    "01_hp/13_characters/ginny_weasley/chibis/fingering/006.png"
+    pause.5
+
+
 image snape_walk_01: #Default Snape walk animation.
     "01_hp/13_characters/snape/chibis/snape_02.png"
     pause.18
@@ -2361,6 +2406,8 @@ image flower_appear:
     pause.1
     "01_hp/08_animation_02/Flower4.png"
     pause.8
+
+
     
 # image vanish_effect_bouquet:
     # "01_hp/08_animation_02/BouquetPaf.png"
