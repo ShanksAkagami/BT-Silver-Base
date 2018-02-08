@@ -674,20 +674,20 @@ label ginny_menu:
                             "Who are you kidding? Start jerking off":
                                 pass
 
-                            "teste":
-                                hide screen hermione_04 #Stands with tits out.
-                                hide screen genie
-                                show screen ctc
-                                show screen groping_ginny
-                                with d1
-                                hide screen blkfade
-                                with d5
-                                pause
-                                show screen bld1
-                                with d3
-                                #call her_head("............","body_200")
-                                #m "Very good..."
-                                #call her_head(".....","body_203")
+                            #"teste":
+                            #    hide screen hermione_04 #Stands with tits out.
+                            #    hide screen genie
+                            #    show screen ctc
+                            #    show screen groping_ginny
+                            #    with d1
+                            #    hide screen blkfade
+                            #    with d5
+                            #    pause
+                            #    show screen bld1
+                            #    with d3
+                            #    #call ginny_main("............","body_200")
+                            #    #m "Very good..."
+                            #    #call ginny_main(".....","body_203")
                     else:
                         call ginny_main("You're going to start jerking off now aren't you?", 1, 1, 7)
                         g9 "You know me so well"
@@ -844,10 +844,6 @@ label ginny_menu:
 
                 "-Grope Butt-":
 
-
-                    ###################REQUEST_05 (Level 02) (BUTT MOLESTER).
-
-
                     hide bld1
                     with d3
                     m "Come closer. Let me molest your butt a little."
@@ -868,7 +864,7 @@ label ginny_menu:
                     call ginny_main("..................",1,10,5)
                     call ginny_main("Do you want me to turn around then, [gw_genie_name]?",1,2,5)
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                    m "Hm... Yes. Turn around, [hermione_name]."
+                    m "Hm... Yes. Turn around, [ginny_name]."
                     call ginny_main("As you say, [gw_genie_name]...",1,10,6)
                     hide screen genie
                     show screen ctc
@@ -880,7 +876,7 @@ label ginny_menu:
                     call ginny_main(".............",1,6,6)
                     call ginny_main("...........................",1,6,8)
                     call ginny_main("[gw_genie_name], I would like to be done with this sooner rather than later...",1,7,6)
-                    m "Don't rush me [hermione_name]... Let me savour the moment..."
+                    m "Don't rush me [ginny_name]... Let me savour the moment..."
                     call ginny_main(".............................",1,17,9)
                     menu:
                         m "Hm..."
@@ -921,7 +917,7 @@ label ginny_menu:
                                             show screen bld1
                                             call ginny_main("!!!!!!!!!!!!!",1,3,4)
                                             call ginny_main("[gw_genie_name], what are you doing!?",1,17,5)
-                                            call ginny_main("You said all you are going to do is touch!",1,17,6)
+                                            call ginny_main("You said all you were going to do is touch!",1,17,6)
                                             menu:
                                                 "\"Fine, fine... I just couldn't resist....\"":
                                                     call ginny_main("Just don't do it again...",1,10,6)
@@ -937,8 +933,7 @@ label ginny_menu:
                                                     call ginny_main("What if somebody hears us?",1,9,6)
                                                     m "Alright, alright... proceeding with groping then..."
                                                     call ginny_main("................",1,17,6)
-   
-            
+               
                     pause
                     show screen groping_ginny
                     with d7
@@ -953,8 +948,8 @@ label ginny_menu:
                     show screen bld1
                     with d3
                     pause
-                    show screen blktone8
-                    with d3
+                    #show screen blktone8
+                    #with d3
                     ">You keep on playing with Ginny's buttocks..."
                     ">You slide your hands up and down her inner tighs..."
                     call ginny_main("................",1,3,11)
@@ -1000,7 +995,7 @@ label ginny_menu:
                                             call ginny_main("Ah....",1,12,8)
                                             ">you slowly start to pump your thumb"
                                             call ginny_main("It's inside of me...",1,4,8)
-                                            ">you rotate thumb as you go"
+                                            ">you rotate your thumb as you go"
                                             call ginny_main("No, [gw_genie_name], you must stop now...",1,6,12)
                                             ">you pull your thumb out of her tight little asshole..."
                                             call ginny_main("Thank you-",1,1,7)
@@ -1021,9 +1016,6 @@ label ginny_menu:
                         "-No. That's enough for today. Dismiss her-":
                             pass
 
-    
-#                    if whoring <= 5:
-#                        $ whoring +=1
                     show screen blkfade 
                     with d5
                     
@@ -1046,8 +1038,6 @@ label ginny_menu:
  
                     m "good night [ginny_name]"
 
-                   
-                   
                     #$ hermione_SC.chibi.xpos = 500 #Near the desk.
                     #show screen hermione_blink #Hermione stands still.
                     show screen bld1
@@ -1055,17 +1045,432 @@ label ginny_menu:
                     with Dissolve(1)
                     
                     call ginny_main("..................",1,1,1)#,xpos=370,ypos=0
-                    her "Thank you [gw_genie_name]..."
+                    call ginny_main("Thank you [gw_genie_name]...")
                     if daytime:
                         call ginny_main("Now if you don't mind I'd better go. The classes are about to start.")
                     else:
                         call ginny_main("I'd better go now then. It's getting pretty late...")
 
 
+                    $ ginny_whoring += 1
+
+                    $ ginny_pf_gropebutt_time = 1
+                    $ renpy.play('sounds/door.mp3')
+                    hide screen ginny_weasley
+                    call reset_ginny_2
+                    with d3
+                    jump day_main_menu
 
 
+                "-Grope Butt 2-":
+
+                    hide bld1
+                    with d3
+                    m "Come closer. Let me molest your butt a little."
+                    #First time
+                    stop music fadeout 5.0
+                    $ gw_blushed = True
+                    call ginny_main("Again, [gw_genie_name]?",1,6,7) #mouth eye
+                    g9 "Yes, again"
+                    #call ginny_main("This is inappropriate, [gw_genie_name]................",1,9,7)
+                    #m "Nobody needs to know and your diary is gonna stay safe and sound here in my drawer"
+                    call ginny_main("Ok...",1,10,7)
+                    hide screen bld1
+                    with d3
+                    #call her_walk(500, 280, 3, redux_pause = 2)
+                    show screen blkfade
+                    hide screen ginny_chibi
+                    with Dissolve(1)
+                    pause.5
+                    #call ginny_main("..................",1,10,5)
+                    call ginny_main("Do you want me to turn around right, [gw_genie_name]?",1,2,5)
+                    play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+                    m "Yes. Turn around, [ginny_name]."
+                    call ginny_main("As you say, [gw_genie_name]...",1,10,6)
+                    hide screen genie
+                    show screen ctc
+                    show screen no_groping_ginny
+                    with d1
+                    hide screen blkfade
+                    with d5
+                    pause
+                    call ginny_main(".............",1,6,6)
+                    call ginny_main(".............................",1,17,9)
+                    menu:
+                        m "Hm..."
+                        "-Give her butt a squeeze-":
+                            pass
+                        "-Give her butt a slap-":
+                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                            show screen white
+                            with hpunch
+                            pause.08
+                            hide screen white
+                            show screen bld1
+                            call ginny_main("!!!!!!!!!!!!!",1,3,3)
+                            call ginny_main("[gw_genie_name]!!?",1,17,4)
+                            menu:
+                                "\"Fine, fine... I just couldn't resist....\"":
+                                    call ginny_main(".......................",1,17,6)
+                                    pass
+                                "-Give her butt a slap-":
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("!!!!!!!!!!!!!",1,6,4)
+                                    call ginny_main("[genie_name]....?",1,3,11)
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    $ gw_crying = True
+                                    $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_1.png"
+                                    call ginny_main("!!!!!!!!!!!!!",1,3,9)
+                                    call ginny_main("[gw_genie_name], what are you doing!?",1,12,6)
+                                    call ginny_main("You said all you were going to do is touch!",1,15,11)
+                                    
+                                    m "do you want me to stop, [ginny_name]?"
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_2.png"
+                                    call ginny_main("ahh!!",1,7,7)
+                                    call ginny_main("...I-",1,2,8)
+                                    $ gw_squirting = True
+                                    $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/dripping.png"
+
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("no!!",1,2,9)
+                                    m "then what do you want me to do?"
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    call ginny_main("",1,1,6)
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("to... keep slapping me!!",1,3,9)
+                                    m "and what do you want me to slap?"
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_2.png"
+
+                                    call ginny_main("my ass!!",1,12,7)
+                                    call ginny_main("slap my slutty ass!!",1,12,7)
+                                    m "you'll have to speak up. I couldn't quite hear you."
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("slap my slutty ass harder!!{image=textheart}{image=textheart}",1,11,6)
+                                    m "you're being rather loud today."
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    call ginny_main("",1,8,8)
+
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("yess!!",1,7,9)
+                                    call ginny_main("harder!!",1,3,11)
+                                    m "what if someone hears?"
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("i don't care!!",1,11,11)
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("yes!!!",1,13,12)
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("just a little-",1,13,13)
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("i'm gunna",1,18,13)
+                                    $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                    show screen white
+                                    with hpunch
+                                    pause.08
+                                    hide screen white
+                                    show screen bld1
+                                    call ginny_main("cumcumcummingcumming",1,14,12)
+                                    call ginny_main("i'm cumming!!!{image=textheart}{image=textheart}",1,14,14)
+                                    with hpunch
+                                    ">you take a moment to watch her spasms"
+                                    m "well, then... proceeding with groping..."
+                                    call ginny_main("................",1,12,14) 
+                                    $ gw_crying = False
+                                    $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_0.png"              
+#                    pause
+#                    show screen groping_ginny
+#                    with d7
+#                    call ginny_main("!!!!!!?",1,17,8)
+#                    m "What is it, [ginny_name]?"
+#                    call ginny_main("I can't believe this is really happening...",1,17,9)
+#                    call ginny_main("This is so... wrong...",1,2,6)
+#                    g9 "Relax, [ginny_name]. It's not like you aren't enjoying this..."
+#                    call ginny_main("What? Of course I'm not! You're blackmailing me...",1,11,11)
+#                    g9 "Yes, concentrate on that..."
+#                    call ginny_main("....................",1,17,11)
+#                    show screen bld1
+#                    with d3
+#                    pause
+#                    show screen blktone8
+#                    with d3
+#                    ">You keep on playing with Ginny's buttocks..."
+#                    ">You slide your hands up and down her inner tighs..."
+#                    call ginny_main("................",1,3,11)
+#                    menu:
+
+                    pause
+                    show screen groping_ginny
+                    with d7
+                    call ginny_main("-wait i juuuus-!!!",1,3,4)
+                    ">her voice trails off to a squeak as you start to knead her big, round ass"
+                    m "hm? what's that? i couldn't hear you, [ginny_name]."
+                    $ gw_squirting = True
+                    $ gw_squirt = "01_hp/13_characters/ginny_weasley/body/squirt/dripping.png"
+                    call ginny_main("you bastard{image=textheart}",1,15,12)
+                    ">Ginny's body quivers as her hips roll"
+                    m "well, someone's enjoying herself."
+                    call ginny_main("Of course I am, who wouldn't be in this situation",1,15,8)
+                    #show screen blktone8
+                    #with d3
+                    ">You keep on playing with Ginny's ass..."
+                    ">And continue sliding your hands up and down her inner thighs..."
+                    call ginny_main("................",1,12,10)
+                    menu:
+                        "-Slide your hands under her panties-":
+                            ">You slowly slide one of your hands under the fabric of the girl's panties..."
+                            call ginny_main("[gw_genie_name]... What are you...?",1,3,6)
+                            m "something you'll enjoy."
+                            m "just relax and leave everything to me."
+                            call ginny_main(".............",1,6,6)
+                            menu:
+                                "-Prod her pussy with one of your fingers-":
+                                    #show screen blkfade
+                                    #with d3
+                                    ">You slide one of your fingers down and place it against the girl's little slit..."
+                                    call ginny_main("[gw_genie_name]?",1,6,4) 
+                                    menu:
+                                        "-Force your finger into her pussy!-":
+                                            ">You force one of your fingers into her little pussy..."
+                                            ">It's very tight and warm..."
+                                            ">it is quite wet as well...  Seems like Ginny's taking pleasure in this..."
+                                            call ginny_main("Ah....",1,2,7)
+                                            call ginny_main("It's inside of me...",1,14,8)
+                                            call ginny_main("No, [gw_genie_name], you must stop now...",1,11,11)
+                                            m "Why? You don't like it?"
+                                            call ginny_main("It doesn't matter, this is where I draw the line,",1,7,11)
+                                            call ginny_main("I'm leaving",1,17,11)
+                                            ">Ginny pulls away from you..."
+                                            m "Heh... I see..."
+                                            m "Well, in that case..."
+                                        "-Let the girl go...-":
+                                            pass
+                                "-Prod her butt-hole instead-":
+                                    #show screen blkfade
+                                    #with d3
+                                    ">You place your one of your thumbs against the girl's little butt-hole..."
+                                    call ginny_main("....",1,6,4)
+                                    menu:
+                                        "-Force your thumb into her butt-hole-":
+                                            ">You force one of your thumbs into her little butt-hole..."
+                                            with hpunch
+                                            call ginny_main("ah... your finger is up my...",1,2,7)
+                                            ">It's very tight and warm inside..."
+                                            call ginny_main("Ah....",1,12,8)
+                                            ">you slowly start to pump your thumb"
+                                            call ginny_main("It's inside of me...",1,4,8)
+                                            ">you rotate thumb as you go"
+                                            call ginny_main("No, [gw_genie_name], you must stop now...",1,6,12)
+                                            ">you pull your thumb out of her tight little asshole..."
+                                            call ginny_main("Thank you-",1,1,7)
+                                            ">...and replace it with two fingers"
+                                            call ginny_main("",1,3,4)
+                                            call ginny_main("B-Bastard!{image=textheart}",1,12,12)
+                                            m "we can, of course, stop right here, unfulfilled. if that's what you really want."
+                                            call ginny_main("...",1,14,12)
+                                            
+                                            m "well?"
+                                            call ginny_main("...keep going...",1,13,12)
+                                            m "hm?"
+                                            call ginny_main("keep fingering my ass!!",1,14,11)
+                                            ">you pull your fingers out of her tight little asshole..."
+                                            call ginny_main("w-what!?",1,12,3)
+                                            call ginny_main("why w-",1,12,6)
+                                            ">You push her down on the desk and shove your fingers back in her asshole"
+                                            hide screen groping_ginny
+                                            show screen fingering_ginny
+                                            with hpunch
+                                            call ginny_main("Aaah!",1,3,4)
+                                            call ginny_main("B-Bastard!{image=textheart}",1,4,6)
+                                            call ginny_main("Y-you teasing b-bastard!{image=textheart}{image=textheart}",1,15,8)
+                                            m "do you like this, [ginny_name]?"
+                                            call ginny_main("yes!!!",1,12,8)
+                                            m "do you love it?"
+                                            $ gw_crying = True
+                                            $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_1.png"
+                                            call ginny_main("oh, god, yes!!!",1,11,9) #tears????
+                                            m "tell me what you love!"
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            call ginny_main("aaah!!{image=textheart}{image=textheart}{image=textheart}",1,3,9)
+                                            m "I asked you a question."
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            call ginny_main("when you finger my ass!",1,4,12)
+                                            call ginny_main("i love it when you fuck my ass with your fingers!",1,12,12)
+                                            m "what else do you love?"
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            call ginny_main("when you slap my slutty ass!",1,13,12)
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            call ginny_main("a-again! i'm c-c",1,15,12)
+                                            m "you're cumming again?"
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            call ginny_main("yes!",1,16,12)
+                                            m "you're cumming from being spanked again?"
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            $ gw_tears = "01_hp/13_characters/ginny_weasley/body/tears/tears_2.png"
+                                            call ginny_main("yes!!",1,12,12)
+                                            m "you're cumming from having your headmaster's fingers shoved up your tight little asshole?"
+                                            $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                            show screen white
+                                            with hpunch
+                                            pause.08
+                                            hide screen white
+                                            show screen bld1
+                                            call ginny_main("yes!!!{image=textheart}",1,14,12)
+                                            ">Ginny's body starts to buck wildly."
+                                            ">you grab herby the hair with your free hand to keep her on the desk even as you frantically pump your fingers into her big, tight ass"
+                                            call ginny_main("ohgodohgodohgod",1,14,13)
+                                            with hpunch
+                                            m "what are you cumming from, little whore?"
+                                            call ginny_main("!!!!",1,15,12) #tears???
+                                            with hpunch
+                                            m "where's all this pleasure coming from?!"
+                                            call ginny_main("my aaaaaaaass!{image=textheart}",1,18,13) #tears???
+                                            with hpunch
+                                            ">with one last spasm, Ginny collapses to the desk. even after fainting, her Body still twitches, and her hips keep rolling."
 
 
+                                        "-Let the girl go...-":
+                                            pass
+                                "-Stop pushing your luck. Dismiss the girl-":
+                                    pass
+                        "-No. That's enough for today. Dismiss her-":
+                            pass
+
+                    show screen blkfade 
+                    with d5
+                    
+                    stop music fadeout 1.0
+                    ">You release her..."
+                    m "This will do for now."
+                    
+                    hide screen blktone8
+                    hide screen ctc
+                    hide screen bld1
+                    hide screen no_groping_ginny
+                    hide screen groping_ginny
+                    hide screen fingering_ginny
+                    call ginny_main("",1,12,14)
+
+                    #show screen hermione_blink
+                    $ ginny_chibi("stand",400)
+                    show screen genie
+                    with d1
+                    
+                    hide screen blkfade
+                    with d3
+ 
+                    m "good night [ginny_name]"
+
+                    #$ hermione_SC.chibi.xpos = 500 #Near the desk.
+                    #show screen hermione_blink #Hermione stands still.
+                    #show screen bld1
+                    hide screen blkfade
+                    with Dissolve(1)
+                    
+                    call ginny_main("..................",1,12,14)#,xpos=370,ypos=0
+                    call ginny_main("Thank you [gw_genie_name]...")
+                    if daytime:
+                        call ginny_main("Now if you don't mind I'd better go. The classes are about to start.")
+                    else:
+                        call ginny_main("I'd better go now then. It's getting pretty late...")
+
+
+                    $ ginny_whoring += 1
+
+                    $ ginny_pf_gropebutt2_time = 1
+                    $ renpy.play('sounds/door.mp3')
+                    hide screen ginny_weasley
+                    call reset_ginny_2
+                    with d3
+                    jump day_main_menu
 
 
                 "-Masturbate- incomplete":
@@ -1364,6 +1769,7 @@ label ginny_menu:
         "-Toggle pubes-":
             if gw_shaved == True:
                 $ gw_shaved = False
+                $ gw_pubic = "01_hp/13_characters/ginny_weasley/body/pubic/au_naturel.png"
             else:
                 $ gw_shaved = True
             call ginny_main("...", 1)

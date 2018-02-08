@@ -106,6 +106,7 @@ label map_dorms: #Label controlling what happens when you go to the dorms
                 m "Ginevra Weasley??"
                 m "What the fuck kind of name is Ginevra?"
                 m "Anyway, this might be useful, better take this back with me to my office"
+                m "I could read it while on my desk"
                 $ diary_found = True
                 $ diary_read = False
                 jump return_office

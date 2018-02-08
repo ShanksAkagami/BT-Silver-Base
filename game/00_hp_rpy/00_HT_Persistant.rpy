@@ -364,6 +364,18 @@ label __init_variables:
     if not hasattr(renpy.store, 'ginny_pf_showtits_time'):
         $ ginny_pf_showtits_time = 0
 
+    if not hasattr(renpy.store, 'ginny_pf_gropebutt'):
+        $ ginny_pf_gropebutt = 0
+
+    if not hasattr(renpy.store, 'ginny_pf_gropebutt_time'):
+        $ ginny_pf_gropebutt_time = 0
+
+    if not hasattr(renpy.store, 'ginny_pf_gropebutt2'):
+        $ ginny_pf_gropebutt2 = 0
+
+    if not hasattr(renpy.store, 'ginny_pf_gropebutt2_time'):
+        $ ginny_pf_gropebutt2_time = 0
+
     if not hasattr(renpy.store, 'gw_shirt_special'):
         $ gw_shirt_special = False
 

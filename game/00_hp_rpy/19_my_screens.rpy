@@ -2115,6 +2115,12 @@ screen groping_ginny:
     add "ginny_groping_01" at Position(xpos=-200+140, ypos=10)
     #add "groping_01_blinking" at Position(xpos=-200+140, ypos=10)
     zorder 1 #Otherwise chair is on top.
+
+screen fingering_ginny: 
+    tag favor
+    add "ginny_fingering_01" at Position(xpos=-200+140, ypos=10)
+    #add "groping_01_blinking" at Position(xpos=-200+140, ypos=10)
+    zorder 1 #Otherwise chair is on top.
     
 ### JERKING OFF ###
 

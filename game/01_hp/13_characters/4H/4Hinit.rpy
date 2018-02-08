@@ -70,6 +70,10 @@ label FH_init:
     $ ginny_pf_pantythief_time = 0
     $ ginny_pf_showtits = 0
     $ ginny_pf_showtits_time = 0
+    $ ginny_pf_gropebutt = 0
+    $ ginny_pf_gropebutt_time = 0
+    $ ginny_pf_gropebutt2 = 0
+    $ ginny_pf_gropebutt_time2 = 0
 
     ##Chibi
 
